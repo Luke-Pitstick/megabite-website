@@ -1,0 +1,20 @@
+{
+  "name": "megabite-consulting",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.3",
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.15.0",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.5.4",
+    "chart.js": "^4.4.0"
+  }
+}

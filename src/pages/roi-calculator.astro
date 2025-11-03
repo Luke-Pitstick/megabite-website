@@ -1,0 +1,654 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="Restaurant ROI Calculator | Technology Savings Calculator Denver" 
+  description="Calculate your restaurant's potential ROI with integrated technology. Discover savings on labor, food costs, and operations. Denver restaurants save $142K on average. Interactive charts included."
+  type="website"
+>
+  <section class="py-20 bg-gradient-to-br from-pink-50 to-white min-h-screen">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-pink-600 to-pink-500 bg-clip-text text-transparent">
+          Restaurant Technology ROI Calculator
+        </h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Discover your potential savings with a unified, integrated tech stack. All calculations are based on real industry data.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8">
+        <!-- Input Form -->
+        <div class="bg-white p-8 rounded-2xl border border-pink-100 shadow-lg">
+          <h2 class="text-2xl font-bold text-gray-900 mb-6">Your Restaurant Details</h2>
+          
+          <form id="roi-form" class="space-y-6">
+            <!-- Annual Revenue -->
+            <div>
+              <label for="revenue" class="block text-sm font-semibold text-gray-700 mb-2">
+                Annual Revenue (Gross Sales)
+              </label>
+              <div class="relative">
+                <span class="absolute left-3 top-3 text-gray-500">$</span>
+                <input
+                  type="number"
+                  id="revenue"
+                  name="revenue"
+                  value="1000000"
+                  min="100000"
+                  step="10000"
+                  class="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+                  required
+                />
+              </div>
+              <p class="mt-1 text-sm text-gray-500">Typical range: $500K - $5M</p>
+            </div>
+
+            <!-- Labor Costs -->
+            <div>
+              <label for="laborCost" class="block text-sm font-semibold text-gray-700 mb-2">
+                Annual Labor Costs
+              </label>
+              <div class="relative">
+                <span class="absolute left-3 top-3 text-gray-500">$</span>
+                <input
+                  type="number"
+                  id="laborCost"
+                  name="laborCost"
+                  value="365000"
+                  min="50000"
+                  step="5000"
+                  class="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+                  required
+                />
+              </div>
+              <p class="mt-1 text-sm text-gray-500">Typical: 30-40% of revenue</p>
+            </div>
+
+            <!-- Food Costs -->
+            <div>
+              <label for="foodCost" class="block text-sm font-semibold text-gray-700 mb-2">
+                Annual Food & Beverage Costs
+              </label>
+              <div class="relative">
+                <span class="absolute left-3 top-3 text-gray-500">$</span>
+                <input
+                  type="number"
+                  id="foodCost"
+                  name="foodCost"
+                  value="300000"
+                  min="50000"
+                  step="5000"
+                  class="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+                  required
+                />
+              </div>
+              <p class="mt-1 text-sm text-gray-500">Typical: 25-35% of revenue</p>
+            </div>
+
+            <!-- Number of Locations -->
+            <div>
+              <label for="locations" class="block text-sm font-semibold text-gray-700 mb-2">
+                Number of Locations
+              </label>
+              <input
+                type="number"
+                id="locations"
+                name="locations"
+                value="1"
+                min="1"
+                max="10"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+                required
+              />
+            </div>
+
+            <!-- Credit Card Volume -->
+            <div>
+              <label for="ccVolume" class="block text-sm font-semibold text-gray-700 mb-2">
+                Credit Card Sales (% of revenue)
+              </label>
+              <div class="relative">
+                <input
+                  type="number"
+                  id="ccVolume"
+                  name="ccVolume"
+                  value="80"
+                  min="50"
+                  max="100"
+                  step="5"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+                  required
+                />
+                <span class="absolute right-3 top-3 text-gray-500">%</span>
+              </div>
+            </div>
+
+            <!-- Average Check -->
+            <div>
+              <label for="avgCheck" class="block text-sm font-semibold text-gray-700 mb-2">
+                Average Check Size
+              </label>
+              <div class="relative">
+                <span class="absolute left-3 top-3 text-gray-500">$</span>
+                <input
+                  type="number"
+                  id="avgCheck"
+                  name="avgCheck"
+                  value="25"
+                  min="10"
+                  max="200"
+                  step="1"
+                  class="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+                  required
+                />
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              class="w-full bg-gradient-to-r from-pink-500 to-pink-600 text-white px-6 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300 hover:scale-105"
+            >
+              Calculate My ROI
+            </button>
+          </form>
+        </div>
+
+        <!-- Results Panel -->
+        <div>
+          <div id="results" class="bg-white p-8 rounded-2xl border border-pink-100 shadow-lg sticky top-24">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Your Projected Savings</h2>
+            
+            <div id="results-placeholder" class="text-center py-8 text-gray-500">
+              <div class="w-16 h-16 bg-gray-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+              Enter your details and click "Calculate My ROI" to see your projected savings
+            </div>
+
+            <div id="results-breakdown" class="hidden space-y-4">
+              <!-- Labor Optimization -->
+              <div class="pb-4 border-b border-gray-100">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-gray-700 font-medium">Labor Optimization</span>
+                  <span id="labor-savings" class="text-lg font-bold text-green-600">$0</span>
+                </div>
+                <p class="text-sm text-gray-500">Data-driven scheduling + self-order technology</p>
+              </div>
+
+              <!-- Food Cost Reduction -->
+              <div class="py-4 border-b border-gray-100">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-gray-700 font-medium">Food Cost Reduction</span>
+                  <span id="food-savings" class="text-lg font-bold text-green-600">$0</span>
+                </div>
+                <p class="text-sm text-gray-500">POS-integrated inventory with variance tracking</p>
+              </div>
+
+              <!-- Check Average Increase -->
+              <div class="py-4 border-b border-gray-100">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-gray-700 font-medium">Check Average Increase</span>
+                  <span id="check-increase" class="text-lg font-bold text-green-600">$0</span>
+                </div>
+                <p class="text-sm text-gray-500">AI suggestive selling and upselling</p>
+              </div>
+
+              <!-- Revenue Recovery -->
+              <div class="py-4 border-b border-gray-100">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-gray-700 font-medium">Revenue Recovery</span>
+                  <span id="revenue-recovery" class="text-lg font-bold text-green-600">$0</span>
+                </div>
+                <p class="text-sm text-gray-500">Table management, reduced no-shows</p>
+              </div>
+
+              <!-- 3rd Party Savings -->
+              <div class="py-4 border-b border-gray-100">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-gray-700 font-medium">3rd-Party Fee Savings</span>
+                  <span id="thirdparty-savings" class="text-lg font-bold text-green-600">$0</span>
+                </div>
+                <p class="text-sm text-gray-500">First-party online ordering</p>
+              </div>
+
+              <!-- Total Value -->
+              <div class="pt-4 pb-3">
+                <div class="flex justify-between items-center">
+                  <span class="text-gray-700 font-semibold">Total Annual Value</span>
+                  <span id="total-value" class="text-2xl font-bold text-pink-600">$0</span>
+                </div>
+              </div>
+
+              <!-- Investment -->
+              <div class="bg-pink-50 p-4 rounded-lg mb-4">
+                <div class="flex justify-between items-center text-sm mb-2">
+                  <span class="text-gray-600">Less: Implementation</span>
+                  <span id="implementation-cost" class="text-gray-600">-$30,000</span>
+                </div>
+                <div class="flex justify-between items-center text-sm">
+                  <span class="text-gray-600">Less: Annual Tech Subscriptions</span>
+                  <span id="subscription-cost" class="text-gray-600">-$12,000</span>
+                </div>
+              </div>
+
+              <!-- Net ROI -->
+              <div class="bg-gradient-to-r from-pink-500 to-pink-600 p-6 rounded-xl text-white">
+                <div class="flex justify-between items-center">
+                  <span class="text-lg font-bold">Net Year 1 ROI</span>
+                  <span id="net-roi" class="text-4xl font-bold">$0</span>
+                </div>
+                <p class="mt-2 text-sm text-pink-100">Typical payback period: 3-6 months</p>
+              </div>
+
+              <!-- Visual Charts -->
+              <div class="mt-6 space-y-4">
+                <!-- Pie Chart -->
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <h4 class="text-sm font-semibold text-gray-900 mb-3 text-center">ROI Breakdown</h4>
+                  <canvas id="roi-pie-chart" class="max-h-48"></canvas>
+                </div>
+                
+                <!-- Bar Chart -->
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <h4 class="text-sm font-semibold text-gray-900 mb-3 text-center">Year-Over-Year Projection</h4>
+                  <canvas id="roi-bar-chart" class="max-h-48"></canvas>
+                </div>
+              </div>
+
+              <!-- CTA -->
+              <div class="mt-6 text-center">
+                <a
+                  href="/#schedule"
+                  class="inline-block bg-gray-900 text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-800 transition-all duration-300"
+                >
+                  Schedule Free Consultation
+                </a>
+                <p class="mt-3 text-sm text-gray-600">
+                  Get a detailed, custom ROI projection for your restaurant
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual ROI Breakdown -->
+      <div class="mt-12 bg-white p-8 rounded-2xl border border-pink-100">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6">Where Your Savings Come From</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h4 class="text-lg font-semibold text-gray-900 mb-4">Optimization Areas</h4>
+            <div class="space-y-4">
+              <div class="flex items-center justify-between p-3 bg-green-50 rounded-lg">
+                <div class="flex items-center">
+                  <div class="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
+                  <span class="text-gray-700">Labor Optimization</span>
+                </div>
+                <span class="font-bold text-green-600">15%</span>
+              </div>
+              <div class="flex items-center justify-between p-3 bg-blue-50 rounded-lg">
+                <div class="flex items-center">
+                  <div class="w-3 h-3 bg-blue-500 rounded-full mr-3"></div>
+                  <span class="text-gray-700">Food Cost Reduction</span>
+                </div>
+                <span class="font-bold text-blue-600">8%</span>
+              </div>
+              <div class="flex items-center justify-between p-3 bg-purple-50 rounded-lg">
+                <div class="flex items-center">
+                  <div class="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
+                  <span class="text-gray-700">Check Average Increase</span>
+                </div>
+                <span class="font-bold text-purple-600">+$1.50</span>
+              </div>
+              <div class="flex items-center justify-between p-3 bg-orange-50 rounded-lg">
+                <div class="flex items-center">
+                  <div class="w-3 h-3 bg-orange-500 rounded-full mr-3"></div>
+                  <span class="text-gray-700">Revenue Recovery</span>
+                </div>
+                <span class="font-bold text-orange-600">4.5%</span>
+              </div>
+              <div class="flex items-center justify-between p-3 bg-pink-50 rounded-lg">
+                <div class="flex items-center">
+                  <div class="w-3 h-3 bg-pink-500 rounded-full mr-3"></div>
+                  <span class="text-gray-700">3rd-Party Savings</span>
+                </div>
+                <span class="font-bold text-pink-600">15%</span>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <h4 class="text-lg font-semibold text-gray-900 mb-4">Industry Benchmarks</h4>
+            <div class="space-y-3 text-sm">
+              <div class="p-3 bg-gray-50 rounded-lg">
+                <div class="flex justify-between items-center mb-1">
+                  <span class="text-gray-700">Typical Payback Period</span>
+                  <span class="font-bold text-gray-900">3-6 months</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                  <div class="bg-pink-500 h-2 rounded-full" style="width: 25%"></div>
+                </div>
+              </div>
+              <div class="p-3 bg-gray-50 rounded-lg">
+                <div class="flex justify-between items-center mb-1">
+                  <span class="text-gray-700">Average Year 1 ROI</span>
+                  <span class="font-bold text-gray-900">476%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                  <div class="bg-green-500 h-2 rounded-full" style="width: 95%"></div>
+                </div>
+              </div>
+              <div class="p-3 bg-gray-50 rounded-lg">
+                <div class="flex justify-between items-center mb-1">
+                  <span class="text-gray-700">Client Satisfaction</span>
+                  <span class="font-bold text-gray-900">98%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                  <div class="bg-blue-500 h-2 rounded-full" style="width: 98%"></div>
+                </div>
+              </div>
+            </div>
+            <p class="mt-4 text-xs text-gray-500 italic">
+              Based on analysis of 50+ restaurant technology implementations in the Denver/Boulder market
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Methodology -->
+      <div class="mt-8 bg-white p-8 rounded-2xl border border-pink-100">
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">How We Calculate Your ROI</h3>
+        <div class="grid md:grid-cols-2 gap-6 text-sm text-gray-700">
+          <div>
+            <h4 class="font-semibold text-gray-900 mb-2">Labor Optimization (15% savings)</h4>
+            <p>Based on industry data showing self-ordering kiosks can eliminate 1 FOH position (~$54K/year), and data-driven scheduling reduces waste by 10-20%.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900 mb-2">Food Cost Reduction (8% of costs)</h4>
+            <p>Research shows every $1 invested in inventory tech yields $8 in savings. POS-integrated inventory provides real-time variance tracking.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900 mb-2">Check Average (+$1.50-$6.73)</h4>
+            <p>Case studies show kiosk suggestive selling increases average ticket by $1.50-$6.73. We conservatively use $1.50.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900 mb-2">Revenue Recovery (4.5% of revenue)</h4>
+            <p>Modern reservation systems generate $18K+ monthly through reduced no-shows and optimized table turnover.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900 mb-2">3rd-Party Savings (15-30% commissions)</h4>
+            <p>First-party ordering platforms eliminate third-party commissions. Conservative estimate: 15% of online orders.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900 mb-2">Investment Costs</h4>
+            <p>Implementation: $15K-$50K (average $30K). Annual subscriptions: $1K-$1.5K per location per month.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+<script is:inline>
+  // Wait for Chart.js to load
+  function waitForChart(callback) {
+    if (typeof Chart !== 'undefined') {
+      callback();
+    } else {
+      setTimeout(function() { waitForChart(callback); }, 100);
+    }
+  }
+  
+  document.getElementById('roi-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form values
+    const revenue = parseFloat(document.getElementById('revenue').value);
+    const laborCost = parseFloat(document.getElementById('laborCost').value);
+    const foodCost = parseFloat(document.getElementById('foodCost').value);
+    const locations = parseInt(document.getElementById('locations').value);
+    const ccVolume = parseFloat(document.getElementById('ccVolume').value) / 100;
+    const avgCheck = parseFloat(document.getElementById('avgCheck').value);
+    
+    // Calculate savings
+    
+    // 1. Labor Optimization: 15% savings on labor costs
+    const laborSavings = Math.round(laborCost * 0.15);
+    
+    // 2. Food Cost Reduction: 8% savings on food costs (8:1 ROI)
+    const foodSavings = Math.round(foodCost * 0.08);
+    
+    // 3. Check Average Increase: $1.50 increase * number of transactions
+    const annualTransactions = revenue / avgCheck;
+    const checkIncrease = Math.round(annualTransactions * 1.50);
+    
+    // 4. Revenue Recovery: 4.5% of revenue from better table management
+    const revenueRecovery = Math.round(revenue * 0.045);
+    
+    // 5. 3rd-Party Fee Savings: Assume 20% of revenue is online orders, save 15% commission
+    const thirdPartySavings = Math.round(revenue * 0.20 * 0.15);
+    
+    // Total value
+    const totalValue = laborSavings + foodSavings + checkIncrease + revenueRecovery + thirdPartySavings;
+    
+    // Investment costs
+    const implementationCost = 30000; // Base implementation
+    const subscriptionCost = locations * 12000; // $1K/month per location
+    
+    // Net ROI
+    const netROI = totalValue - implementationCost - subscriptionCost;
+    
+    // Update UI
+    document.getElementById('labor-savings').textContent = '$' + laborSavings.toLocaleString();
+    document.getElementById('food-savings').textContent = '$' + foodSavings.toLocaleString();
+    document.getElementById('check-increase').textContent = '$' + checkIncrease.toLocaleString();
+    document.getElementById('revenue-recovery').textContent = '$' + revenueRecovery.toLocaleString();
+    document.getElementById('thirdparty-savings').textContent = '$' + thirdPartySavings.toLocaleString();
+    document.getElementById('total-value').textContent = '$' + totalValue.toLocaleString();
+    document.getElementById('implementation-cost').textContent = '-$' + implementationCost.toLocaleString();
+    document.getElementById('subscription-cost').textContent = '-$' + subscriptionCost.toLocaleString();
+    document.getElementById('net-roi').textContent = '$' + netROI.toLocaleString();
+    
+    // Show results
+    const placeholder = document.getElementById('results-placeholder');
+    const breakdown = document.getElementById('results-breakdown');
+    if (placeholder) placeholder.style.display = 'none';
+    if (breakdown) breakdown.classList.remove('hidden');
+    
+    // Trigger counter animations
+    animateCounter();
+    
+    // Wait for Chart.js to be ready, then create charts
+    waitForChart(function() {
+      createCharts(laborSavings, foodSavings, checkIncrease, revenueRecovery, thirdPartySavings, netROI);
+    });
+  });
+  
+  // Chart creation function
+  function createCharts(labor, food, check, revenue, thirdParty, netROI) {
+    // Check if Chart.js is loaded
+    if (typeof Chart === 'undefined') {
+      console.error('Chart.js not loaded yet');
+      return;
+    }
+    
+    // Destroy existing charts if they exist
+    const existingPieChart = Chart.getChart('roi-pie-chart');
+    const existingBarChart = Chart.getChart('roi-bar-chart');
+    if (existingPieChart) existingPieChart.destroy();
+    if (existingBarChart) existingBarChart.destroy();
+    
+    // Pie Chart - ROI Breakdown
+    const pieCtx = document.getElementById('roi-pie-chart').getContext('2d');
+    if (pieCtx) {
+      new Chart(pieCtx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Labor', 'Food Cost', 'Check Avg', 'Revenue', '3rd-Party'],
+          datasets: [{
+            data: [labor, food, check, revenue, thirdParty],
+            backgroundColor: [
+              '#10b981', // green
+              '#3b82f6', // blue
+              '#a855f7', // purple
+              '#f97316', // orange
+              '#ec4899'  // pink
+            ],
+            borderWidth: 2,
+            borderColor: '#ffffff'
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: true,
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: {
+                padding: 10,
+                font: {
+                  size: 11
+                }
+              }
+            },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return context.label + ': $' + context.parsed.toLocaleString();
+                }
+              }
+            }
+          }
+        }
+      });
+    }
+    
+    // Bar Chart - Year-Over-Year Projection
+    const barCtx = document.getElementById('roi-bar-chart').getContext('2d');
+    if (barCtx) {
+      const year1 = netROI;
+      const year2 = Math.round(netROI * 1.15); // 15% improvement
+      const year3 = Math.round(netROI * 1.25); // 25% improvement
+      
+      new Chart(barCtx, {
+        type: 'bar',
+        data: {
+          labels: ['Year 1', 'Year 2', 'Year 3'],
+          datasets: [{
+            label: 'Net ROI',
+            data: [year1, year2, year3],
+            backgroundColor: [
+              '#ec4899',
+              '#db2777',
+              '#be185d'
+            ],
+            borderRadius: 8,
+            borderWidth: 0
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: true,
+          plugins: {
+            legend: {
+              display: false
+            },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return 'ROI: $' + context.parsed.y.toLocaleString();
+                }
+              }
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              ticks: {
+                callback: function(value) {
+                  return '$' + (value / 1000).toFixed(0) + 'K';
+                }
+              }
+            }
+          }
+        }
+      });
+    }
+  }
+  
+  // Animated Counter Function
+  function animateCounter() {
+    const counters = document.querySelectorAll('.counter');
+    
+    counters.forEach(counter => {
+      const target = parseInt(counter.getAttribute('data-target'));
+      const increment = target / 100;
+      let current = 0;
+      
+      const updateCounter = () => {
+        current += increment;
+        if (current < target) {
+          if (counter.getAttribute('data-target') === '184600' || counter.getAttribute('data-target') === '142600') {
+            counter.textContent = '$' + Math.ceil(current).toLocaleString();
+          } else {
+            counter.textContent = Math.ceil(current);
+          }
+          requestAnimationFrame(updateCounter);
+        } else {
+          if (counter.getAttribute('data-target') === '184600' || counter.getAttribute('data-target') === '142600') {
+            counter.textContent = '$' + target.toLocaleString();
+          } else {
+            counter.textContent = target;
+          }
+        }
+      };
+      
+      updateCounter();
+    });
+  }
+</script>
+
+<style>
+  .counter {
+    display: inline-block;
+  }
+  
+  .implementation-timeline {
+    position: relative;
+  }
+  
+  .implementation-timeline::before {
+    content: '';
+    position: absolute;
+    top: 32px;
+    left: 16.66%;
+    right: 16.66%;
+    height: 2px;
+    background: linear-gradient(to right, #ec4899, #ec4899);
+    z-index: 0;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .stats-grid > div {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+  
+  .stats-grid > div:nth-child(1) { animation-delay: 0.1s; }
+  .stats-grid > div:nth-child(2) { animation-delay: 0.2s; }
+</style>

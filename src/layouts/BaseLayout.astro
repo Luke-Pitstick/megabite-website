@@ -1,0 +1,257 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  type?: string;
+  canonical?: string;
+}
+
+const { 
+  title, 
+  description = "Fractional CTO for Denver & Boulder restaurants. Vendor-agnostic technology consulting delivering $142K average Year 1 ROI through integrated POS, inventory, labor, and ordering systems.", 
+  image = "/og-image.jpg",
+  type = "website",
+  canonical = Astro.url.pathname 
+} = Astro.props;
+
+// Generate full URL for Open Graph
+const siteUrl = "https://megabite.consulting";
+const fullUrl = siteUrl + canonical;
+const fullImageUrl = siteUrl + image;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href={fullUrl} />
+    
+    <!-- Enhanced Local SEO -->
+    <meta name="geo.region" content="US-CO" />
+    <meta name="geo.placename" content="Denver, Boulder" />
+    <meta name="geo.position" content="39.7392;-104.9903" />
+    <meta name="ICBM" content="39.7392, -104.9903" />
+    <meta name="keywords" content="restaurant technology consultant Denver, POS systems Boulder Colorado, restaurant consulting Denver, fractional CTO restaurants, vendor-agnostic restaurant technology, restaurant tech integration Colorado, restaurant ROI calculator, POS integration Denver, restaurant automation Colorado, inventory management systems Denver, restaurant data analytics Boulder, QuickBooks integration restaurants, labor scheduling software Denver, online ordering systems Colorado" />
+    
+    <!-- Enhanced Open Graph -->
+    <meta property="og:title" content={title + " | Megabite Consulting"} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={type} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content={fullUrl} />
+    <meta property="og:image" content={fullImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Megabite Consulting" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title + " | Megabite Consulting"} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={fullImageUrl} />
+    <meta name="twitter:site" content="@megabiteco" />
+    
+    <!-- Additional SEO Meta -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content="Megabite Consulting" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    
+    <!-- Business Information -->
+    <meta name="business:contact_data:street_address" content="Denver, CO" />
+    <meta name="business:contact_data:locality" content="Denver" />
+    <meta name="business:contact_data:region" content="CO" />
+    <meta name="business:contact_data:postal_code" content="80202" />
+    <meta name="business:contact_data:country_name" content="USA" />
+    <meta name="business:hours" content="Mo-Fr 09:00-18:00" />
+    <meta name="business:contact_data:website" content="https://megabite.consulting" />
+    <meta name="business:contact_data:email" content="hello@megabite.consulting" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    
+    <title>{title} | Megabite Consulting - Denver & Boulder Restaurant Technology</title>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://megabite.consulting/#localbusiness",
+          "name": "Megabite Consulting",
+          "description": "Fractional CTO for Denver & Boulder restaurants. Vendor-agnostic technology consulting delivering $142K average Year 1 ROI through integrated POS, inventory, labor, and ordering systems.",
+          "url": "https://megabite.consulting",
+          "telephone": "",
+          "email": "hello@megabite.consulting",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Denver",
+            "addressRegion": "CO",
+            "postalCode": "80202",
+            "addressCountry": "US"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.7392",
+            "longitude": "-104.9903"
+          },
+          "openingHours": "Mo-Fr 09:00-18:00",
+          "priceRange": "$$",
+          "sameAs": [
+            "https://calendly.com/lukepitstick06/30min"
+          ],
+          "serviceType": "Restaurant Technology Consulting",
+          "areaServed": [
+            "Denver",
+            "Boulder",
+            "Colorado"
+          ]
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://megabite.consulting/#professionalservice",
+          "name": "Megabite Consulting",
+          "description": "Vendor-agnostic restaurant technology consulting and fractional CTO services",
+          "url": "https://megabite.consulting",
+          "serviceType": [
+            "POS System Integration",
+            "Inventory Management",
+            "Labor Optimization",
+            "Online Ordering Systems",
+            "Restaurant Automation",
+            "Data Analytics"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Restaurant Technology Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Technology Stack Audit",
+                  "description": "Comprehensive analysis of your current restaurant technology"
+                }
+              },
+              {
+                "@type": "Offer", 
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "System Integration",
+                  "description": "Connect your POS, inventory, labor, and ordering systems"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service", 
+                  "name": "Fractional CTO Services",
+                  "description": "Ongoing technology strategy and support"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://megabite.consulting/#website",
+          "url": "https://megabite.consulting",
+          "name": "Megabite Consulting",
+          "description": "Fractional CTO for Denver & Boulder restaurants. Vendor-agnostic technology consulting delivering $142K average Year 1 ROI through integrated POS, inventory, labor, and ordering systems.",
+          "publisher": {
+            "@id": "https://megabite.consulting/#localbusiness"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://megabite.consulting/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body class="bg-white text-gray-900 font-sans antialiased">
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-sm border-b border-pink-100 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <a href="/" class="flex items-center space-x-2">
+            <span class="text-2xl font-bold bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
+              Megabite
+            </span>
+          </a>
+          <div class="hidden md:flex space-x-8">
+            <a href="/" class="text-gray-700 hover:text-pink-600 transition-colors">Home</a>
+            <a href="/services" class="text-gray-700 hover:text-pink-600 transition-colors">Services</a>
+            <a href="/roi-calculator" class="text-gray-700 hover:text-pink-600 transition-colors">ROI Calculator</a>
+            <a href="/blog" class="text-gray-700 hover:text-pink-600 transition-colors">Blog</a>
+            <a href="/about" class="text-gray-700 hover:text-pink-600 transition-colors">About</a>
+          </div>
+          <a href="#schedule" class="bg-gradient-to-r from-pink-500 to-pink-600 text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105">
+            Book Free Consultation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="pt-16">
+      <slot />
+    </main>
+
+    <footer class="bg-gradient-to-br from-pink-50 to-white border-t border-pink-100 mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div class="col-span-2">
+            <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent mb-4">
+              Megabite Consulting
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Empowering local restaurants with modern technology solutions. 
+              Your fractional CTO for sustainable growth.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900 mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+              <li><a href="/services" class="text-gray-600 hover:text-pink-600 transition-colors">Services</a></li>
+              <li><a href="/blog" class="text-gray-600 hover:text-pink-600 transition-colors">Blog</a></li>
+              <li><a href="/about" class="text-gray-600 hover:text-pink-600 transition-colors">About</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900 mb-4">Contact</h4>
+            <ul class="space-y-2">
+              <li class="text-gray-600">Schedule a consultation</li>
+              <li><a href="mailto:hello@megabite.consulting" class="text-gray-600 hover:text-pink-600 transition-colors">hello@megabite.consulting</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-pink-100 mt-8 pt-8 text-center text-gray-600">
+          <p>&copy; {new Date().getFullYear()} Megabite Consulting. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
