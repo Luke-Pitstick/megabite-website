@@ -16,7 +16,7 @@ const {
 } = Astro.props;
 
 // Generate full URL for Open Graph
-const siteUrl = "https://megabite.consulting";
+const siteUrl = "https://megabiteco.com";
 const fullUrl = siteUrl + canonical;
 const fullImageUrl = siteUrl + image;
 ---
@@ -24,10 +24,23 @@ const fullImageUrl = siteUrl + image;
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JTKE8QLEY1"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JTKE8QLEY1');
+    </script>
+    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     
     <!-- Canonical URL -->
     <link rel="canonical" href={fullUrl} />
@@ -70,7 +83,7 @@ const fullImageUrl = siteUrl + image;
     <meta name="business:contact_data:postal_code" content="80202" />
     <meta name="business:contact_data:country_name" content="USA" />
     <meta name="business:hours" content="Mo-Fr 09:00-18:00" />
-    <meta name="business:contact_data:website" content="https://megabite.consulting" />
+    <meta name="business:contact_data:website" content="https://megabiteco.com" />
     <meta name="business:contact_data:email" content="hello@megabite.consulting" />
     
     <!-- Fonts -->
@@ -87,10 +100,10 @@ const fullImageUrl = siteUrl + image;
       "@graph": [
         {
           "@type": "LocalBusiness",
-          "@id": "https://megabite.consulting/#localbusiness",
+          "@id": "https://megabiteco.com/#localbusiness",
           "name": "Megabite Consulting",
           "description": "Fractional CTO for Denver & Boulder restaurants. Vendor-agnostic technology consulting delivering $142K average Year 1 ROI through integrated POS, inventory, labor, and ordering systems.",
-          "url": "https://megabite.consulting",
+          "url": "https://megabiteco.com",
           "telephone": "",
           "email": "hello@megabite.consulting",
           "address": {
@@ -119,10 +132,10 @@ const fullImageUrl = siteUrl + image;
         },
         {
           "@type": "ProfessionalService",
-          "@id": "https://megabite.consulting/#professionalservice",
+          "@id": "https://megabiteco.com/#professionalservice",
           "name": "Megabite Consulting",
           "description": "Vendor-agnostic restaurant technology consulting and fractional CTO services",
-          "url": "https://megabite.consulting",
+          "url": "https://megabiteco.com",
           "serviceType": [
             "POS System Integration",
             "Inventory Management",
@@ -164,16 +177,16 @@ const fullImageUrl = siteUrl + image;
         },
         {
           "@type": "WebSite",
-          "@id": "https://megabite.consulting/#website",
-          "url": "https://megabite.consulting",
+          "@id": "https://megabiteco.com/#website",
+          "url": "https://megabiteco.com",
           "name": "Megabite Consulting",
           "description": "Fractional CTO for Denver & Boulder restaurants. Vendor-agnostic technology consulting delivering $142K average Year 1 ROI through integrated POS, inventory, labor, and ordering systems.",
           "publisher": {
-            "@id": "https://megabite.consulting/#localbusiness"
+            "@id": "https://megabiteco.com/#localbusiness"
           },
           "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://megabite.consulting/search?q={search_term_string}",
+            "target": "https://megabiteco.com/search?q={search_term_string}",
             "query-input": "required name=search_term_string"
           }
         }
