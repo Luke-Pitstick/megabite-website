@@ -204,7 +204,7 @@
     const counters = document.querySelectorAll('.counter');
     
     counters.forEach(counter => {
-      const target = parseInt(counter.getAttribute('data-target'));
+      const target = parseInt(counter.getAttribute('data-target') || '0');
       const increment = target / 100;
       let current = 0;
       
@@ -225,7 +225,7 @@
           } else if (counter.getAttribute('data-target') === '99') {
             counter.textContent = target + '%';
           } else {
-            counter.textContent = target;
+            counter.textContent = target.toString();
           }
         }
       };
