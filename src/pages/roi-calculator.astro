@@ -174,7 +174,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <div class="pb-4 border-b border-gray-100">
                 <div class="flex justify-between items-center mb-2">
                   <span class="text-gray-700 font-medium">Labor Optimization</span>
-                  <span id="labor-savings" class="text-lg font-bold text-green-600">$0</span>
+                  <span id="labor-savings" class="text-lg font-bold text-accent-labor-600">$0</span>
                 </div>
                 <p class="text-sm text-gray-500">Data-driven scheduling + self-order technology</p>
               </div>
@@ -183,7 +183,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <div class="py-4 border-b border-gray-100">
                 <div class="flex justify-between items-center mb-2">
                   <span class="text-gray-700 font-medium">Food Cost Reduction</span>
-                  <span id="food-savings" class="text-lg font-bold text-green-600">$0</span>
+                  <span id="food-savings" class="text-lg font-bold text-accent-inventory-600">$0</span>
                 </div>
                 <p class="text-sm text-gray-500">POS-integrated inventory with variance tracking</p>
               </div>
@@ -192,7 +192,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <div class="py-4 border-b border-gray-100">
                 <div class="flex justify-between items-center mb-2">
                   <span class="text-gray-700 font-medium">Check Average Increase</span>
-                  <span id="check-increase" class="text-lg font-bold text-green-600">$0</span>
+                  <span id="check-increase" class="text-lg font-bold text-accent-customer-600">$0</span>
                 </div>
                 <p class="text-sm text-gray-500">AI suggestive selling and upselling</p>
               </div>
@@ -201,7 +201,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <div class="py-4 border-b border-gray-100">
                 <div class="flex justify-between items-center mb-2">
                   <span class="text-gray-700 font-medium">Revenue Recovery</span>
-                  <span id="revenue-recovery" class="text-lg font-bold text-green-600">$0</span>
+                  <span id="revenue-recovery" class="text-lg font-bold text-accent-customer-600">$0</span>
                 </div>
                 <p class="text-sm text-gray-500">Table management, reduced no-shows</p>
               </div>
@@ -210,7 +210,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <div class="py-4 border-b border-gray-100">
                 <div class="flex justify-between items-center mb-2">
                   <span class="text-gray-700 font-medium">3rd-Party Fee Savings</span>
-                  <span id="thirdparty-savings" class="text-lg font-bold text-green-600">$0</span>
+                  <span id="thirdparty-savings" class="text-lg font-bold text-accent-financial-600">$0</span>
                 </div>
                 <p class="text-sm text-gray-500">First-party online ordering</p>
               </div>
@@ -285,40 +285,40 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div>
             <h4 class="text-lg font-semibold text-gray-900 mb-4">Optimization Areas</h4>
             <div class="space-y-4">
-              <div class="flex items-center justify-between p-3 bg-green-50 rounded-lg">
+              <div class="flex items-center justify-between p-3 bg-accent-labor-50 rounded-lg">
                 <div class="flex items-center">
-                  <div class="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
+                  <div class="w-3 h-3 bg-accent-labor-500 rounded-full mr-3"></div>
                   <span class="text-gray-700">Labor Optimization</span>
                 </div>
-                <span class="font-bold text-green-600">15%</span>
+                <span class="font-bold text-accent-labor-600">15%</span>
               </div>
-              <div class="flex items-center justify-between p-3 bg-blue-50 rounded-lg">
+              <div class="flex items-center justify-between p-3 bg-accent-inventory-50 rounded-lg">
                 <div class="flex items-center">
-                  <div class="w-3 h-3 bg-blue-500 rounded-full mr-3"></div>
+                  <div class="w-3 h-3 bg-accent-inventory-500 rounded-full mr-3"></div>
                   <span class="text-gray-700">Food Cost Reduction</span>
                 </div>
-                <span class="font-bold text-blue-600">8%</span>
+                <span class="font-bold text-accent-inventory-600">8%</span>
               </div>
-              <div class="flex items-center justify-between p-3 bg-purple-50 rounded-lg">
+              <div class="flex items-center justify-between p-3 bg-accent-customer-50 rounded-lg">
                 <div class="flex items-center">
-                  <div class="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
+                  <div class="w-3 h-3 bg-accent-customer-500 rounded-full mr-3"></div>
                   <span class="text-gray-700">Check Average Increase</span>
                 </div>
-                <span class="font-bold text-purple-600">+$1.50</span>
+                <span class="font-bold text-accent-customer-600">+$1.50</span>
               </div>
-              <div class="flex items-center justify-between p-3 bg-orange-50 rounded-lg">
+              <div class="flex items-center justify-between p-3 bg-accent-customer-50 rounded-lg">
                 <div class="flex items-center">
-                  <div class="w-3 h-3 bg-orange-500 rounded-full mr-3"></div>
+                  <div class="w-3 h-3 bg-accent-customer-500 rounded-full mr-3"></div>
                   <span class="text-gray-700">Revenue Recovery</span>
                 </div>
-                <span class="font-bold text-orange-600">4.5%</span>
+                <span class="font-bold text-accent-customer-600">4.5%</span>
               </div>
-              <div class="flex items-center justify-between p-3 bg-primary-50 rounded-lg">
+              <div class="flex items-center justify-between p-3 bg-accent-financial-50 rounded-lg">
                 <div class="flex items-center">
-                  <div class="w-3 h-3 bg-primary-500 rounded-full mr-3"></div>
+                  <div class="w-3 h-3 bg-accent-financial-500 rounded-full mr-3"></div>
                   <span class="text-gray-700">3rd-Party Savings</span>
                 </div>
-                <span class="font-bold text-primary-600">15%</span>
+                <span class="font-bold text-accent-financial-600">15%</span>
               </div>
             </div>
           </div>
@@ -341,7 +341,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                   <span class="font-bold text-gray-900">476%</span>
                 </div>
                 <div class="w-full bg-gray-200 rounded-full h-2">
-                  <div class="bg-green-500 h-2 rounded-full" style="width: 95%"></div>
+                  <div class="bg-accent-labor-500 h-2 rounded-full" style="width: 95%"></div>
                 </div>
               </div>
               <div class="p-3 bg-gray-50 rounded-lg">
@@ -350,7 +350,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                   <span class="font-bold text-gray-900">98%</span>
                 </div>
                 <div class="w-full bg-gray-200 rounded-full h-2">
-                  <div class="bg-blue-500 h-2 rounded-full" style="width: 98%"></div>
+                  <div class="bg-primary-500 h-2 rounded-full" style="width: 98%"></div>
                 </div>
               </div>
             </div>
