@@ -7,10 +7,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="Calculate your restaurant's potential ROI with integrated technology. Discover savings on labor, food costs, and operations. Denver restaurants save $142K on average. Interactive charts included."
   type="website"
 >
-  <section class="py-20 bg-gradient-to-br from-pink-50 to-white min-h-screen">
+  <section class="py-20 bg-gradient-to-br from-primary-50 to-white min-h-screen">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h1 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-pink-600 to-pink-500 bg-clip-text text-transparent">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent">
           Restaurant Technology ROI Calculator
         </h1>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -20,7 +20,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <div class="grid lg:grid-cols-2 gap-8">
         <!-- Input Form -->
-        <div class="bg-white p-8 rounded-2xl border border-pink-100 shadow-lg">
+        <div class="bg-white p-8 rounded-2xl border border-primary-100 shadow-lg">
           <h2 class="text-2xl font-bold text-gray-900 mb-6">Your Restaurant Details</h2>
           
           <form id="roi-form" class="space-y-6">
@@ -38,7 +38,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                   value="1000000"
                   min="100000"
                   step="10000"
-                  class="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+                  class="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                   required
                 />
               </div>
@@ -59,7 +59,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                   value="365000"
                   min="50000"
                   step="5000"
-                  class="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+                  class="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                   required
                 />
               </div>
@@ -80,7 +80,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                   value="300000"
                   min="50000"
                   step="5000"
-                  class="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+                  class="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                   required
                 />
               </div>
@@ -99,7 +99,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 value="1"
                 min="1"
                 max="10"
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                 required
               />
             </div>
@@ -118,7 +118,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                   min="50"
                   max="100"
                   step="5"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                   required
                 />
                 <span class="absolute right-3 top-3 text-gray-500">%</span>
@@ -140,7 +140,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                   min="10"
                   max="200"
                   step="1"
-                  class="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+                  class="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                   required
                 />
               </div>
@@ -148,7 +148,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
             <button
               type="submit"
-              class="w-full bg-gradient-to-r from-pink-500 to-pink-600 text-white px-6 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300 hover:scale-105"
+              class="w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300 hover:scale-105"
             >
               Calculate My ROI
             </button>
@@ -157,7 +157,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         <!-- Results Panel -->
         <div>
-          <div id="results" class="bg-white p-8 rounded-2xl border border-pink-100 shadow-lg sticky top-24">
+          <div id="results" class="bg-white p-8 rounded-2xl border border-primary-100 shadow-lg">
             <h2 class="text-2xl font-bold text-gray-900 mb-6">Your Projected Savings</h2>
             
             <div id="results-placeholder" class="text-center py-8 text-gray-500">
@@ -219,12 +219,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <div class="pt-4 pb-3">
                 <div class="flex justify-between items-center">
                   <span class="text-gray-700 font-semibold">Total Annual Value</span>
-                  <span id="total-value" class="text-2xl font-bold text-pink-600">$0</span>
+                  <span id="total-value" class="text-2xl font-bold text-primary-600">$0</span>
                 </div>
               </div>
 
               <!-- Investment -->
-              <div class="bg-pink-50 p-4 rounded-lg mb-4">
+              <div class="bg-primary-50 p-4 rounded-lg mb-4">
                 <div class="flex justify-between items-center text-sm mb-2">
                   <span class="text-gray-600">Less: Implementation</span>
                   <span id="implementation-cost" class="text-gray-600">-$30,000</span>
@@ -236,48 +236,50 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               </div>
 
               <!-- Net ROI -->
-              <div class="bg-gradient-to-r from-pink-500 to-pink-600 p-6 rounded-xl text-white">
+              <div class="bg-gradient-to-r from-primary-500 to-primary-600 p-6 rounded-xl text-white">
                 <div class="flex justify-between items-center">
                   <span class="text-lg font-bold">Net Year 1 ROI</span>
                   <span id="net-roi" class="text-4xl font-bold">$0</span>
                 </div>
-                <p class="mt-2 text-sm text-pink-100">Typical payback period: 3-6 months</p>
-              </div>
-
-              <!-- Visual Charts -->
-              <div class="mt-6 space-y-4">
-                <!-- Pie Chart -->
-                <div class="bg-gray-50 p-4 rounded-lg">
-                  <h4 class="text-sm font-semibold text-gray-900 mb-3 text-center">ROI Breakdown</h4>
-                  <canvas id="roi-pie-chart" class="max-h-48"></canvas>
-                </div>
-                
-                <!-- Bar Chart -->
-                <div class="bg-gray-50 p-4 rounded-lg">
-                  <h4 class="text-sm font-semibold text-gray-900 mb-3 text-center">Year-Over-Year Projection</h4>
-                  <canvas id="roi-bar-chart" class="max-h-48"></canvas>
-                </div>
-              </div>
-
-              <!-- CTA -->
-              <div class="mt-6 text-center">
-                <a
-                  href="/#schedule"
-                  class="inline-block bg-gray-900 text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-800 transition-all duration-300"
-                >
-                  Schedule Free Consultation
-                </a>
-                <p class="mt-3 text-sm text-gray-600">
-                  Get a detailed, custom ROI projection for your restaurant
-                </p>
+                <p class="mt-2 text-sm text-primary-100">Typical payback period: 3-6 months</p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- Visual Charts Section -->
+      <div id="charts-section" class="hidden mt-12">
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Pie Chart -->
+          <div class="bg-white p-6 rounded-2xl border border-primary-100 shadow-lg">
+            <h4 class="text-lg font-semibold text-gray-900 mb-4 text-center">ROI Breakdown</h4>
+            <canvas id="roi-pie-chart" class="max-h-64"></canvas>
+          </div>
+          
+          <!-- Bar Chart -->
+          <div class="bg-white p-6 rounded-2xl border border-primary-100 shadow-lg">
+            <h4 class="text-lg font-semibold text-gray-900 mb-4 text-center">Year-Over-Year Projection</h4>
+            <canvas id="roi-bar-chart" class="max-h-64"></canvas>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-8 text-center bg-gradient-to-r from-primary-50 to-white p-8 rounded-2xl">
+          <a
+            href="/#schedule"
+            class="inline-block bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all duration-300 hover:scale-105"
+          >
+            Schedule Free Consultation
+          </a>
+          <p class="mt-4 text-sm text-gray-600">
+            Get a detailed, custom ROI projection for your restaurant
+          </p>
+        </div>
+      </div>
+
       <!-- Visual ROI Breakdown -->
-      <div class="mt-12 bg-white p-8 rounded-2xl border border-pink-100">
+      <div class="mt-12 bg-white p-8 rounded-2xl border border-primary-100">
         <h3 class="text-2xl font-bold text-gray-900 mb-6">Where Your Savings Come From</h3>
         <div class="grid md:grid-cols-2 gap-8">
           <div>
@@ -311,12 +313,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 </div>
                 <span class="font-bold text-orange-600">4.5%</span>
               </div>
-              <div class="flex items-center justify-between p-3 bg-pink-50 rounded-lg">
+              <div class="flex items-center justify-between p-3 bg-primary-50 rounded-lg">
                 <div class="flex items-center">
-                  <div class="w-3 h-3 bg-pink-500 rounded-full mr-3"></div>
+                  <div class="w-3 h-3 bg-primary-500 rounded-full mr-3"></div>
                   <span class="text-gray-700">3rd-Party Savings</span>
                 </div>
-                <span class="font-bold text-pink-600">15%</span>
+                <span class="font-bold text-primary-600">15%</span>
               </div>
             </div>
           </div>
@@ -330,7 +332,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                   <span class="font-bold text-gray-900">3-6 months</span>
                 </div>
                 <div class="w-full bg-gray-200 rounded-full h-2">
-                  <div class="bg-pink-500 h-2 rounded-full" style="width: 25%"></div>
+                  <div class="bg-primary-500 h-2 rounded-full" style="width: 25%"></div>
                 </div>
               </div>
               <div class="p-3 bg-gray-50 rounded-lg">
@@ -360,7 +362,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
 
       <!-- Methodology -->
-      <div class="mt-8 bg-white p-8 rounded-2xl border border-pink-100">
+      <div class="mt-8 bg-white p-8 rounded-2xl border border-primary-100">
         <h3 class="text-2xl font-bold text-gray-900 mb-4">How We Calculate Your ROI</h3>
         <div class="grid md:grid-cols-2 gap-6 text-sm text-gray-700">
           <div>
@@ -457,8 +459,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     // Show results
     const placeholder = document.getElementById('results-placeholder');
     const breakdown = document.getElementById('results-breakdown');
+    const chartsSection = document.getElementById('charts-section');
     if (placeholder) placeholder.style.display = 'none';
     if (breakdown) breakdown.classList.remove('hidden');
+    if (chartsSection) chartsSection.classList.remove('hidden');
     
     // Trigger counter animations
     animateCounter();

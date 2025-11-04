@@ -2,7 +2,7 @@
 title: "Fractional CTO vs. Full-Time: What Makes Sense for Your Restaurant?"
 description: "Learn why a fractional CTO might be the perfect solution for your restaurant's technology needs."
 pubDate: 2024-10-28
-author: "Megabite Consulting"
+author: "MegaBite"
 ---
 
 As your restaurant grows, so do your technology needs. But does that mean you need a full-time CTO? For most local and small restaurant groups, the answer is no.

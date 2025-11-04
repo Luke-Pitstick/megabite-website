@@ -1,4 +1,7 @@
 ---
+import CookieConsent from '../components/CookieConsent.astro';
+import '../styles/animations.css';
+
 interface Props {
   title: string;
   description?: string;
@@ -10,7 +13,7 @@ interface Props {
 const { 
   title, 
   description = "Fractional CTO for Denver & Boulder restaurants. Vendor-agnostic technology consulting delivering $142K average Year 1 ROI through integrated POS, inventory, labor, and ordering systems.", 
-  image = "/og-image.jpg",
+  image = "/logo.png",
   type = "website",
   canonical = Astro.url.pathname 
 } = Astro.props;
@@ -25,12 +28,13 @@ const fullImageUrl = siteUrl + image;
 <html lang="en">
   <head>
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JTKE8QLEY1"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2JEBR1S2WH"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-JTKE8QLEY1');
+      
+      gtag('config', 'G-2JEBR1S2WH');
     </script>
     
     <meta charset="UTF-8" />
@@ -39,7 +43,8 @@ const fullImageUrl = siteUrl + image;
     <meta name="generator" content={Astro.generator} />
     
     <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/logo-icon.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     
     <!-- Canonical URL -->
@@ -53,7 +58,7 @@ const fullImageUrl = siteUrl + image;
     <meta name="keywords" content="restaurant technology consultant Denver, POS systems Boulder Colorado, restaurant consulting Denver, fractional CTO restaurants, vendor-agnostic restaurant technology, restaurant tech integration Colorado, restaurant ROI calculator, POS integration Denver, restaurant automation Colorado, inventory management systems Denver, restaurant data analytics Boulder, QuickBooks integration restaurants, labor scheduling software Denver, online ordering systems Colorado" />
     
     <!-- Enhanced Open Graph -->
-    <meta property="og:title" content={title + " | Megabite Consulting"} />
+    <meta property="og:title" content={title + " | MegaBite"} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content={type} />
     <meta property="og:locale" content="en_US" />
@@ -61,18 +66,18 @@ const fullImageUrl = siteUrl + image;
     <meta property="og:image" content={fullImageUrl} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:site_name" content="Megabite Consulting" />
+    <meta property="og:site_name" content="MegaBite" />
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title + " | Megabite Consulting"} />
+    <meta name="twitter:title" content={title + " | MegaBite"} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={fullImageUrl} />
     <meta name="twitter:site" content="@megabiteco" />
     
     <!-- Additional SEO Meta -->
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="author" content="Megabite Consulting" />
+    <meta name="author" content="MegaBite" />
     <meta name="language" content="English" />
     <meta name="revisit-after" content="7 days" />
     
@@ -91,7 +96,7 @@ const fullImageUrl = siteUrl + image;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
     
-    <title>{title} | Megabite Consulting - Denver & Boulder Restaurant Technology</title>
+    <title>{title} | MegaBite - Denver & Boulder Restaurant Technology</title>
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -101,7 +106,9 @@ const fullImageUrl = siteUrl + image;
         {
           "@type": "LocalBusiness",
           "@id": "https://megabiteco.com/#localbusiness",
-          "name": "Megabite Consulting",
+          "name": "MegaBite",
+          "image": "https://megabiteco.com/logo.png",
+          "logo": "https://megabiteco.com/logo.png",
           "description": "Fractional CTO for Denver & Boulder restaurants. Vendor-agnostic technology consulting delivering $142K average Year 1 ROI through integrated POS, inventory, labor, and ordering systems.",
           "url": "https://megabiteco.com",
           "telephone": "",
@@ -133,7 +140,7 @@ const fullImageUrl = siteUrl + image;
         {
           "@type": "ProfessionalService",
           "@id": "https://megabiteco.com/#professionalservice",
-          "name": "Megabite Consulting",
+          "name": "MegaBite",
           "description": "Vendor-agnostic restaurant technology consulting and fractional CTO services",
           "url": "https://megabiteco.com",
           "serviceType": [
@@ -176,13 +183,40 @@ const fullImageUrl = siteUrl + image;
           }
         },
         {
+          "@type": "Organization",
+          "@id": "https://megabiteco.com/#organization",
+          "name": "MegaBite",
+          "url": "https://megabiteco.com",
+          "logo": "https://megabiteco.com/logo.png",
+          "description": "Restaurant technology solutions for POS integration, online ordering, inventory management, and digital analytics. Helping restaurants modernize operations and increase profitability.",
+          "areaServed": "United States",
+          "sameAs": [
+            "https://calendly.com/lukepitstick06/30min"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "hello@megabite.consulting",
+            "contactType": "Customer Service",
+            "areaServed": "US"
+          },
+          "knowsAbout": [
+            "Restaurant Technology",
+            "POS Systems",
+            "Online Ordering Integration",
+            "Restaurant Analytics",
+            "Inventory Management",
+            "Labor Optimization",
+            "Digital Transformation"
+          ]
+        },
+        {
           "@type": "WebSite",
           "@id": "https://megabiteco.com/#website",
           "url": "https://megabiteco.com",
-          "name": "Megabite Consulting",
+          "name": "MegaBite",
           "description": "Fractional CTO for Denver & Boulder restaurants. Vendor-agnostic technology consulting delivering $142K average Year 1 ROI through integrated POS, inventory, labor, and ordering systems.",
           "publisher": {
-            "@id": "https://megabiteco.com/#localbusiness"
+            "@id": "https://megabiteco.com/#organization"
           },
           "potentialAction": {
             "@type": "SearchAction",
@@ -195,22 +229,67 @@ const fullImageUrl = siteUrl + image;
     </script>
   </head>
   <body class="bg-white text-gray-900 font-sans antialiased">
-    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-sm border-b border-pink-100 z-50">
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-sm border-b border-secondary-200 z-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
-          <a href="/" class="flex items-center space-x-2">
-            <span class="text-2xl font-bold bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
-              Megabite
+          <a href="/" class="flex items-center">
+            <span class="text-3xl font-bold">
+              <span class="text-secondary-900">Mega</span><span class="text-primary-500">Bite</span>
             </span>
           </a>
-          <div class="hidden md:flex space-x-8">
-            <a href="/" class="text-gray-700 hover:text-pink-600 transition-colors">Home</a>
-            <a href="/services" class="text-gray-700 hover:text-pink-600 transition-colors">Services</a>
-            <a href="/roi-calculator" class="text-gray-700 hover:text-pink-600 transition-colors">ROI Calculator</a>
-            <a href="/blog" class="text-gray-700 hover:text-pink-600 transition-colors">Blog</a>
-            <a href="/about" class="text-gray-700 hover:text-pink-600 transition-colors">About</a>
+          <div class="hidden md:flex space-x-6 items-center">
+            <a href="/" class="text-gray-700 hover:text-secondary-900 transition-colors font-medium">Home</a>
+            <a href="/services" class="text-gray-700 hover:text-secondary-900 transition-colors font-medium">Services</a>
+            <a href="/pricing" class="text-gray-700 hover:text-secondary-900 transition-colors font-medium">Pricing</a>
+            <div class="relative group">
+              <button class="text-gray-700 hover:text-secondary-900 transition-colors font-medium flex items-center">
+                Calculators
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <a href="/roi-calculator" class="block px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors rounded-t-lg">ROI Calculator</a>
+                <a href="/labor-calculator" class="block px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Labor Cost Calculator</a>
+                <a href="/food-waste-calculator" class="block px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">Food Waste Calculator</a>
+                <a href="/delivery-calculator" class="block px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors rounded-b-lg">Delivery Fee Calculator</a>
+              </div>
+            </div>
+            <a href="/blog" class="text-gray-700 hover:text-secondary-900 transition-colors font-medium">Blog</a>
+            <a href="/faq" class="text-gray-700 hover:text-secondary-900 transition-colors font-medium">FAQ</a>
           </div>
-          <a href="#schedule" class="bg-gradient-to-r from-pink-500 to-pink-600 text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105">
+          <div class="flex items-center gap-4">
+            <a href="/schedule" class="hidden md:inline-block bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105">
+              Book Free Consultation
+            </a>
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-primary-600">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="hidden md:hidden border-t border-secondary-200 bg-white">
+        <div class="px-4 py-4 space-y-3">
+          <a href="/" class="block text-gray-700 hover:text-secondary-900 hover:bg-secondary-50 transition-colors py-2 px-3 rounded font-medium">Home</a>
+          <a href="/services" class="block text-gray-700 hover:text-secondary-900 hover:bg-secondary-50 transition-colors py-2 px-3 rounded font-medium">Services</a>
+          <a href="/pricing" class="block text-gray-700 hover:text-secondary-900 hover:bg-secondary-50 transition-colors py-2 px-3 rounded font-medium">Pricing</a>
+          
+          <!-- Calculators submenu -->
+          <div class="border-l-2 border-primary-300 pl-3 space-y-2">
+            <p class="text-sm font-semibold text-gray-500 px-3 py-1">Calculators</p>
+            <a href="/roi-calculator" class="block text-gray-600 hover:text-secondary-900 hover:bg-secondary-50 transition-colors py-2 px-3 rounded text-sm">ROI Calculator</a>
+            <a href="/labor-calculator" class="block text-gray-600 hover:text-secondary-900 hover:bg-secondary-50 transition-colors py-2 px-3 rounded text-sm">Labor Cost</a>
+            <a href="/food-waste-calculator" class="block text-gray-600 hover:text-secondary-900 hover:bg-secondary-50 transition-colors py-2 px-3 rounded text-sm">Food Waste</a>
+            <a href="/delivery-calculator" class="block text-gray-600 hover:text-secondary-900 hover:bg-secondary-50 transition-colors py-2 px-3 rounded text-sm">Delivery Fees</a>
+          </div>
+          
+          <a href="/blog" class="block text-gray-700 hover:text-secondary-900 hover:bg-secondary-50 transition-colors py-2 px-3 rounded font-medium">Blog</a>
+          <a href="/faq" class="block text-gray-700 hover:text-secondary-900 hover:bg-secondary-50 transition-colors py-2 px-3 rounded font-medium">FAQ</a>
+          <a href="/schedule" class="block bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-3 rounded-full text-center hover:shadow-lg transition-all duration-300 mt-4">
             Book Free Consultation
           </a>
         </div>
@@ -221,12 +300,12 @@ const fullImageUrl = siteUrl + image;
       <slot />
     </main>
 
-    <footer class="bg-gradient-to-br from-pink-50 to-white border-t border-pink-100 mt-20">
+    <footer class="bg-gradient-to-br from-secondary-50 to-white border-t border-secondary-200 mt-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div class="grid md:grid-cols-4 gap-8">
           <div class="col-span-2">
-            <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent mb-4">
-              Megabite Consulting
+            <h3 class="text-2xl font-bold mb-4">
+              <span class="text-secondary-900">Mega</span><span class="text-primary-500">Bite</span>
             </h3>
             <p class="text-gray-600 mb-4">
               Empowering local restaurants with modern technology solutions. 
@@ -234,26 +313,80 @@ const fullImageUrl = siteUrl + image;
             </p>
           </div>
           <div>
-            <h4 class="font-semibold text-gray-900 mb-4">Quick Links</h4>
+            <h4 class="font-semibold text-secondary-900 mb-4">Quick Links</h4>
             <ul class="space-y-2">
-              <li><a href="/services" class="text-gray-600 hover:text-pink-600 transition-colors">Services</a></li>
-              <li><a href="/blog" class="text-gray-600 hover:text-pink-600 transition-colors">Blog</a></li>
-              <li><a href="/about" class="text-gray-600 hover:text-pink-600 transition-colors">About</a></li>
+              <li><a href="/services" class="text-gray-600 hover:text-secondary-900 transition-colors">Services</a></li>
+              <li><a href="/pricing" class="text-gray-600 hover:text-secondary-900 transition-colors">Pricing</a></li>
+              <li><a href="/how-it-works" class="text-gray-600 hover:text-secondary-900 transition-colors">How It Works</a></li>
+              <li><a href="/blog" class="text-gray-600 hover:text-secondary-900 transition-colors">Blog</a></li>
+              <li><a href="/faq" class="text-gray-600 hover:text-secondary-900 transition-colors">FAQ</a></li>
             </ul>
           </div>
           <div>
-            <h4 class="font-semibold text-gray-900 mb-4">Contact</h4>
+            <h4 class="font-semibold text-secondary-900 mb-4">Contact</h4>
             <ul class="space-y-2">
-              <li class="text-gray-600">Schedule a consultation</li>
-              <li><a href="mailto:hello@megabite.consulting" class="text-gray-600 hover:text-pink-600 transition-colors">hello@megabite.consulting</a></li>
+              <li><a href="https://calendly.com/lukepitstick06/30min" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-secondary-900 transition-colors">Schedule a consultation</a></li>
+              <li><a href="mailto:hello@megabite.consulting" class="text-gray-600 hover:text-secondary-900 transition-colors">hello@megabite.consulting</a></li>
             </ul>
           </div>
         </div>
-        <div class="border-t border-pink-100 mt-8 pt-8 text-center text-gray-600">
-          <p>&copy; {new Date().getFullYear()} Megabite Consulting. All rights reserved.</p>
+        <div class="border-t border-secondary-200 mt-8 pt-8 text-center text-gray-600">
+          <p class="mb-2">&copy; {new Date().getFullYear()} MegaBite. All rights reserved.</p>
+          <p>
+            <a href="/privacy" class="hover:text-secondary-900 transition-colors">Privacy Policy</a>
+          </p>
         </div>
       </div>
     </footer>
+
+    <!-- Exit Intent Popup -->
+    <div id="exit-popup" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
+      <div class="bg-white rounded-2xl max-w-2xl w-full p-8 relative animate-popup">
+        <button id="close-popup" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        
+        <div class="text-center">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            Thanks for visiting Megabite!
+          </h2>
+          <p class="text-xl text-gray-600 mb-6">
+            Ready to transform your restaurant's technology? Schedule a free consultation to discuss your challenges and discover quick wins.
+          </p>
+          
+          <!-- PDF Download Form (Hidden - can be re-enabled later)
+          <form id="exit-popup-form" class="max-w-md mx-auto">
+            <input 
+              type="email" 
+              name="email"
+              placeholder="Enter your email"
+              required
+              class="w-full px-6 py-4 rounded-full border-2 border-primary-200 focus:border-primary-500 focus:outline-none mb-4"
+            />
+            <button 
+              type="submit"
+              class="w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transition-all duration-300 hover:scale-105"
+            >
+              Download Free Guide
+            </button>
+          </form>
+          -->
+          
+          <a href="/schedule" class="inline-block bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transition-all duration-300 hover:scale-105">
+            Schedule Free Consultation
+          </a>
+          
+          <p class="text-sm text-gray-500 mt-4">
+            No pressure, no sales pitch - just honest advice.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cookie Consent Banner -->
+    <CookieConsent />
   </body>
 </html>
 
@@ -267,4 +400,115 @@ const fullImageUrl = siteUrl + image;
   html {
     scroll-behavior: smooth;
   }
+  
+  @keyframes popup {
+    from {
+      opacity: 0;
+      transform: scale(0.9) translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+  
+  .animate-popup {
+    animation: popup 0.3s ease-out;
+  }
 </style>
+
+<script is:inline>
+  // Exit Intent Popup Logic
+  (function() {
+    const popup = document.getElementById('exit-popup');
+    const closeButton = document.getElementById('close-popup');
+    const form = document.getElementById('exit-popup-form');
+    let hasShownPopup = false;
+
+    // Show popup on exit intent (mouse leaving viewport from top)
+    function handleMouseOut(e) {
+      if (!hasShownPopup && e.clientY <= 0 && e.relatedTarget == null) {
+        popup?.classList.remove('hidden');
+        hasShownPopup = true;
+        // Store in session so it doesn't show again this session
+        sessionStorage.setItem('exitPopupShown', 'true');
+      }
+    }
+
+    // Close popup
+    function closePopup() {
+      popup?.classList.add('hidden');
+    }
+
+    // Handle form submission (commented out since form is hidden)
+    // function handleSubmit(e) {
+    //   e.preventDefault();
+    //   // Here you would send to your email service
+    //   alert('Thanks! Check your email for the guide.');
+    //   closePopup();
+    // }
+
+    // Exit intent popup disabled per user request
+    // Check if popup was already shown this session
+    // if (!sessionStorage.getItem('exitPopupShown')) {
+    //   document.addEventListener('mouseout', handleMouseOut);
+    // }
+
+    closeButton?.addEventListener('click', closePopup);
+    popup?.addEventListener('click', function(e) {
+      if (e.target === popup) closePopup();
+    });
+    // form?.addEventListener('submit', handleSubmit); // Commented out since form is hidden
+  })();
+
+  // Mobile menu toggle
+  (function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuButton?.addEventListener('click', function() {
+      mobileMenu?.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when clicking a link
+    const mobileLinks = mobileMenu?.querySelectorAll('a');
+    mobileLinks?.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu?.classList.add('hidden');
+      });
+    });
+  })();
+
+  // Scroll-triggered animations
+  (function() {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          // Optionally stop observing after animation triggers
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Observe all elements with scroll animation classes
+    document.addEventListener('DOMContentLoaded', () => {
+      const animatedElements = document.querySelectorAll('.scroll-animate, .scroll-fade, .card-entrance');
+      animatedElements.forEach(el => observer.observe(el));
+
+      // Stagger animation for lists
+      const staggerLists = document.querySelectorAll('[data-stagger]');
+      staggerLists.forEach(list => {
+        const items = list.querySelectorAll('.stagger-item');
+        items.forEach((item, index) => {
+          item.style.animationDelay = `${index * 100}ms`;
+        });
+      });
+    });
+  })();
+</script>

@@ -6,7 +6,7 @@ const blog = defineCollection({
     title: z.string(),
     description: z.string(),
     pubDate: z.coerce.date(),
-    author: z.string().default('Megabite Consulting'),
+    author: z.string().default('MegaBite'),
     image: z.string().optional(),
   }),
 });

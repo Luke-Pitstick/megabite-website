@@ -15,6 +15,30 @@ export const GET: APIRoute = async ({ site }) => {
       lastmod: new Date()
     },
     {
+      url: '/pricing',
+      changefreq: 'monthly',
+      priority: 0.9,
+      lastmod: new Date()
+    },
+    {
+      url: '/how-it-works',
+      changefreq: 'monthly',
+      priority: 0.8,
+      lastmod: new Date()
+    },
+    {
+      url: '/faq',
+      changefreq: 'monthly',
+      priority: 0.8,
+      lastmod: new Date()
+    },
+    {
+      url: '/schedule',
+      changefreq: 'monthly',
+      priority: 0.9,
+      lastmod: new Date()
+    },
+    {
       url: '/roi-calculator',
       changefreq: 'monthly',
       priority: 0.9,
@@ -30,6 +54,12 @@ export const GET: APIRoute = async ({ site }) => {
       url: '/blog',
       changefreq: 'weekly',
       priority: 0.8,
+      lastmod: new Date()
+    },
+    {
+      url: '/privacy',
+      changefreq: 'yearly',
+      priority: 0.3,
       lastmod: new Date()
     }
   ];

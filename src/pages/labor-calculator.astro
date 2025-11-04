@@ -1,0 +1,185 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="Labor Cost Calculator | Restaurant Scheduling Optimizer" 
+  description="Calculate your restaurant's labor costs and discover how much you could save with optimized scheduling and integrated time tracking."
+>
+  <section class="py-12 sm:py-20 bg-gradient-to-br from-primary-50 via-white to-primary-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-hidden">
+      <div class="text-center mb-12 scroll-animate">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-scale">
+          <span class="bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent">
+            Labor Cost Calculator
+          </span>
+        </h1>
+        <p class="text-xl text-gray-600 animate-fade-in delay-200">
+          Discover how much you're overspending on labor and what you could save
+        </p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-xl p-8 card-entrance">
+        <form id="labor-calculator" class="space-y-6">
+          <!-- Weekly Sales -->
+          <div class="scroll-animate">
+            <label class="block text-sm font-semibold text-gray-700 mb-2">
+              Average Weekly Sales
+            </label>
+            <div class="relative">
+              <span class="absolute left-4 top-3 text-gray-500">$</span>
+              <input 
+                type="number" 
+                id="weekly-sales"
+                placeholder="25000"
+                class="w-full pl-8 pr-4 py-3 rounded-lg border-2 border-gray-200 focus:border-primary-500 focus:outline-none text-lg"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Current Labor % -->
+          <div class="scroll-animate">
+            <label class="block text-sm font-semibold text-gray-700 mb-2">
+              Current Labor Cost % of Sales
+            </label>
+            <div class="relative">
+              <input 
+                type="number" 
+                id="labor-percent"
+                placeholder="35"
+                step="0.1"
+                class="w-full pr-8 pl-4 py-3 rounded-lg border-2 border-gray-200 focus:border-primary-500 focus:outline-none text-lg"
+                required
+              />
+              <span class="absolute right-4 top-3 text-gray-500">%</span>
+            </div>
+            <p class="mt-2 text-sm text-gray-500">Industry average: 30-35% (full-service), 25-30% (quick-service)</p>
+          </div>
+
+          <!-- Number of Employees -->
+          <div class="scroll-animate">
+            <label class="block text-sm font-semibold text-gray-700 mb-2">
+              Number of Employees
+            </label>
+            <input 
+              type="number" 
+              id="employee-count"
+              placeholder="15"
+              class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-primary-500 focus:outline-none text-lg"
+              required
+            />
+          </div>
+
+          <!-- Current Overtime Hours -->
+          <div class="scroll-animate">
+            <label class="block text-sm font-semibold text-gray-700 mb-2">
+              Weekly Overtime Hours
+            </label>
+            <input 
+              type="number" 
+              id="overtime-hours"
+              placeholder="20"
+              class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-primary-500 focus:outline-none text-lg"
+              required
+            />
+          </div>
+
+          <!-- Calculate Button -->
+          <button 
+            type="submit"
+            class="w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transition-all duration-300 hover:scale-105 btn-shimmer"
+          >
+            Calculate Labor Savings
+          </button>
+        </form>
+
+        <!-- Results Section -->
+        <div id="results" class="hidden mt-8 space-y-6">
+          <div class="border-t-2 border-gray-200 pt-6">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">Your Labor Analysis</h3>
+            
+            <div class="grid md:grid-cols-2 gap-4 md:gap-6">
+              <!-- Current Costs -->
+              <div class="bg-gradient-to-br from-red-50 to-white p-4 md:p-6 rounded-xl border border-red-100">
+                <p class="text-xs md:text-sm font-semibold text-red-600 mb-2">CURRENT ANNUAL LABOR COST</p>
+                <p class="text-2xl md:text-4xl font-bold text-red-700 break-words" id="current-cost">$0</p>
+              </div>
+
+              <!-- Potential Savings -->
+              <div class="bg-gradient-to-br from-primary-50 to-white p-4 md:p-6 rounded-xl border border-primary-100">
+                <p class="text-xs md:text-sm font-semibold text-primary-600 mb-2">POTENTIAL ANNUAL SAVINGS</p>
+                <p class="text-2xl md:text-4xl font-bold text-primary-700 break-words" id="savings">$0</p>
+              </div>
+            </div>
+
+            <!-- Breakdown -->
+            <div class="mt-6 grid sm:grid-cols-3 gap-4">
+              <div class="bg-gradient-to-br from-green-50 to-white p-4 rounded-lg border border-green-100 text-center">
+                <p class="text-xs font-semibold text-green-600 mb-2">OVERTIME REDUCTION</p>
+                <p class="text-xl md:text-2xl font-bold text-green-700" id="overtime-savings">$0</p>
+                <p class="text-xs text-gray-600 mt-2">30% reduction</p>
+              </div>
+              <div class="bg-gradient-to-br from-blue-50 to-white p-4 rounded-lg border border-blue-100 text-center">
+                <p class="text-xs font-semibold text-blue-600 mb-2">SCHEDULING OPTIMIZATION</p>
+                <p class="text-xl md:text-2xl font-bold text-blue-700" id="scheduling-savings">$0</p>
+                <p class="text-xs text-gray-600 mt-2">3% improvement</p>
+              </div>
+              <div class="bg-gradient-to-br from-purple-50 to-white p-4 rounded-lg border border-purple-100 text-center">
+                <p class="text-xs font-semibold text-purple-600 mb-2">TIME THEFT PREVENTION</p>
+                <p class="text-xl md:text-2xl font-bold text-purple-700" id="theft-savings">$0</p>
+                <p class="text-xs text-gray-600 mt-2">4.5 hrs/week saved</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Section Below -->
+        <div id="cta-section" class="hidden mt-8 bg-gradient-to-br from-primary-500 to-primary-600 p-6 md:p-8 rounded-xl text-white text-center">
+          <h4 class="text-xl md:text-2xl font-bold mb-2">Ready to Save on Labor?</h4>
+          <p class="mb-4 opacity-90">Get a free audit of your scheduling and time tracking systems</p>
+          <a href="/schedule" class="inline-block bg-white text-primary-600 px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105">
+            Schedule Free Consultation
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  document.getElementById('labor-calculator')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const weeklySales = parseFloat((document.getElementById('weekly-sales') as HTMLInputElement).value);
+    const laborPercent = parseFloat((document.getElementById('labor-percent') as HTMLInputElement).value);
+    const employeeCount = parseFloat((document.getElementById('employee-count') as HTMLInputElement).value);
+    const overtimeHours = parseFloat((document.getElementById('overtime-hours') as HTMLInputElement).value);
+
+    // Calculate current annual labor cost
+    const weeklyLaborCost = (weeklySales * laborPercent) / 100;
+    const annualLaborCost = weeklyLaborCost * 52;
+
+    // Calculate savings opportunities
+    const overtimeReduction = (overtimeHours * 30 * 1.5 * 52) * 0.3; // 30% reduction at $30/hr overtime rate
+    const schedulingOptimization = annualLaborCost * 0.03; // 3% improvement from better scheduling
+    const timeTheftPrevention = employeeCount * 4.5 * 52; // Average 4.5 hours/week time theft per employee at ~$15/hr
+
+    const totalSavings = overtimeReduction + schedulingOptimization + timeTheftPrevention;
+
+    // Update results
+    document.getElementById('current-cost')!.textContent = `$${annualLaborCost.toLocaleString('en-US', {maximumFractionDigits: 0})}`;
+    document.getElementById('savings')!.textContent = `$${totalSavings.toLocaleString('en-US', {maximumFractionDigits: 0})}`;
+    document.getElementById('overtime-savings')!.textContent = `$${overtimeReduction.toLocaleString('en-US', {maximumFractionDigits: 0})}`;
+    document.getElementById('scheduling-savings')!.textContent = `$${schedulingOptimization.toLocaleString('en-US', {maximumFractionDigits: 0})}`;
+    document.getElementById('theft-savings')!.textContent = `$${timeTheftPrevention.toLocaleString('en-US', {maximumFractionDigits: 0})}`;
+
+    // Show results
+    const results = document.getElementById('results');
+    const ctaSection = document.getElementById('cta-section');
+    results?.classList.remove('hidden');
+    results?.classList.add('animate-slide-up');
+    ctaSection?.classList.remove('hidden');
+    results?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+</script>

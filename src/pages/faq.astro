@@ -1,0 +1,417 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="Frequently Asked Questions | MegaBite" 
+  description="Common questions about restaurant technology consulting, fractional CTO services, POS integration, and pricing. Get answers about how MegaBite can help your restaurant."
+>
+  <!-- Hero -->
+  <section class="py-20 bg-gradient-to-br from-primary-50 to-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 animate-scale">
+          <span class="bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent text-gradient-animate">
+            Frequently Asked Questions
+          </span>
+        </h1>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto animate-fade-in delay-200">
+          Everything you need to know about working with MegaBite
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Content -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- General Questions -->
+      <div class="mb-16 scroll-animate">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">General Questions</h2>
+        
+        <div class="space-y-4">
+          <!-- FAQ Item -->
+          <div class="faq-item bg-gradient-to-br from-primary-50 to-white rounded-2xl border border-primary-100 overflow-hidden">
+            <button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-primary-50 transition-colors">
+              <h3 class="text-xl font-bold text-gray-900 pr-8">What is a Fractional CTO?</h3>
+              <svg class="faq-icon w-6 h-6 text-primary-600 flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-answer hidden p-6 pt-0">
+              <p class="text-gray-700 leading-relaxed">
+                A Fractional CTO is a technology executive who works with your restaurant on a part-time or contract basis. 
+                You get senior-level tech leadership and strategy without the cost of a full-time hire ($150K+ salary). 
+                We handle everything from system selection and integration to ongoing optimization and vendor management.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item bg-gradient-to-br from-primary-50 to-white rounded-2xl border border-primary-100 overflow-hidden">
+            <button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-primary-50 transition-colors">
+              <h3 class="text-xl font-bold text-gray-900 pr-8">How is MegaBite different from POS resellers?</h3>
+              <svg class="faq-icon w-6 h-6 text-primary-600 flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-answer hidden p-6 pt-0">
+              <p class="text-gray-700 leading-relaxed mb-4">
+                We're vendor-agnostic, meaning we don't take kickbacks or push any specific brand. POS resellers make money 
+                selling you their system, while we make money ensuring you get the RIGHT system for your needs—whether that's 
+                Toast, Square, Lightspeed, or something else entirely.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                We also go beyond just POS: we integrate your entire tech stack (inventory, labor, online ordering, accounting) 
+                into one unified system.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item bg-gradient-to-br from-primary-50 to-white rounded-2xl border border-primary-100 overflow-hidden">
+            <button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-primary-50 transition-colors">
+              <h3 class="text-xl font-bold text-gray-900 pr-8">Do you work with restaurants outside of Denver/Boulder?</h3>
+              <svg class="faq-icon w-6 h-6 text-primary-600 flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-answer hidden p-6 pt-0">
+              <p class="text-gray-700 leading-relaxed">
+                Yes! While we're based in Denver and specialize in the local market, we work with restaurants nationwide. 
+                Most of our work is done remotely, with on-site visits available for Denver/Boulder clients.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Services & Process -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">Services & Process</h2>
+        
+        <div class="space-y-4">
+          <div class="faq-item bg-gradient-to-br from-primary-50 to-white rounded-2xl border border-primary-100 overflow-hidden">
+            <button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-primary-50 transition-colors">
+              <h3 class="text-xl font-bold text-gray-900 pr-8">What's included in a Tech Stack Audit?</h3>
+              <svg class="faq-icon w-6 h-6 text-primary-600 flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-answer hidden p-6 pt-0">
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Our comprehensive audit includes:
+              </p>
+              <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
+                <li>Review of all current systems (POS, inventory, scheduling, ordering)</li>
+                <li>Gap analysis and redundancy identification</li>
+                <li>Integration opportunity assessment</li>
+                <li>ROI projections for recommended changes</li>
+                <li>3-year technology roadmap</li>
+                <li>Vendor recommendations (unbiased)</li>
+                <li>Written report with executive summary</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item bg-gradient-to-br from-primary-50 to-white rounded-2xl border border-primary-100 overflow-hidden">
+            <button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-primary-50 transition-colors">
+              <h3 class="text-xl font-bold text-gray-900 pr-8">How long does implementation take?</h3>
+              <svg class="faq-icon w-6 h-6 text-primary-600 flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-answer hidden p-6 pt-0">
+            <p class="text-gray-700 leading-relaxed">
+              Timeline varies by project scope:
+            </p>
+            <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4 mt-3">
+              <li><strong>Tech Audit:</strong> 1-2 weeks</li>
+              <li><strong>POS Integration:</strong> 2-4 weeks</li>
+              <li><strong>Full Stack Integration:</strong> 6-12 weeks</li>
+              <li><strong>Multi-location rollout:</strong> 3-6 months</li>
+            </ul>
+              <p class="text-gray-700 leading-relaxed mt-4">
+                We work around your schedule to minimize disruption and never go live during peak service times.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item bg-gradient-to-br from-primary-50 to-white rounded-2xl border border-primary-100 overflow-hidden">
+            <button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-primary-50 transition-colors">
+              <h3 class="text-xl font-bold text-gray-900 pr-8">Do I need to switch my current POS?</h3>
+              <svg class="faq-icon w-6 h-6 text-primary-600 flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-answer hidden p-6 pt-0">
+            <p class="text-gray-700 leading-relaxed">
+              Not necessarily! Many times we can integrate your existing POS with other systems to solve your problems. 
+              We only recommend switching if it makes financial sense and solves specific pain points. If your current 
+                POS works well, we'll build around it.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item bg-gradient-to-br from-primary-50 to-white rounded-2xl border border-primary-100 overflow-hidden">
+            <button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-primary-50 transition-colors">
+              <h3 class="text-xl font-bold text-gray-900 pr-8">What POS systems do you work with?</h3>
+              <svg class="faq-icon w-6 h-6 text-primary-600 flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-answer hidden p-6 pt-0">
+              <p class="text-gray-700 leading-relaxed">
+                We integrate with all major restaurant POS systems:
+              </p>
+              <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4 mt-3">
+                <li>Toast</li>
+                <li>Square</li>
+                <li>Clover</li>
+                <li>Lightspeed</li>
+                <li>TouchBistro</li>
+                <li>Revel</li>
+                <li>NCR Aloha</li>
+                <li>And many others</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pricing & Investment -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">Pricing & Investment</h2>
+        
+        <div class="space-y-4">
+          <div class="faq-item bg-gradient-to-br from-primary-50 to-white rounded-2xl border border-primary-100 overflow-hidden">
+            <button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-primary-50 transition-colors">
+              <h3 class="text-xl font-bold text-gray-900 pr-8">How much does fractional CTO service cost?</h3>
+              <svg class="faq-icon w-6 h-6 text-primary-600 flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-answer hidden p-6 pt-0">
+              <p class="text-gray-700 leading-relaxed">
+                Our services are customized to your needs:
+              </p>
+              <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4 mt-3">
+                <li><strong>Tech Stack Audit:</strong> Starting at $1,500</li>
+                <li><strong>Integration Projects:</strong> $5,000-$15,000 (varies by scope)</li>
+                <li><strong>Monthly Retainer:</strong> $2,000-$5,000/month</li>
+              </ul>
+              <p class="text-gray-700 leading-relaxed mt-4">
+                Average ROI is $142,600 in Year 1, so most projects pay for themselves in 3-6 months.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item bg-gradient-to-br from-primary-50 to-white rounded-2xl border border-primary-100 overflow-hidden">
+            <button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-primary-50 transition-colors">
+              <h3 class="text-xl font-bold text-gray-900 pr-8">What's the typical ROI?</h3>
+              <svg class="faq-icon w-6 h-6 text-primary-600 flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-answer hidden p-6 pt-0">
+              <p class="text-gray-700 leading-relaxed">
+                Our clients see average savings/new revenue of $142,600 in Year 1 through:
+              </p>
+              <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4 mt-3">
+                <li>15% labor cost reduction through better scheduling</li>
+                <li>8% food cost savings through inventory optimization</li>
+                <li>20-30% increase in online ordering (first-party)</li>
+                <li>Elimination of redundant software subscriptions</li>
+                <li>Reduction in third-party delivery fees</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item bg-gradient-to-br from-primary-50 to-white rounded-2xl border border-primary-100 overflow-hidden">
+            <button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-primary-50 transition-colors">
+              <h3 class="text-xl font-bold text-gray-900 pr-8">Do you charge setup fees?</h3>
+              <svg class="faq-icon w-6 h-6 text-primary-600 flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-answer hidden p-6 pt-0">
+              <p class="text-gray-700 leading-relaxed">
+                Setup and discovery are included in project pricing. You'll know the full cost upfront before we start. 
+                No hidden fees, no surprises.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item bg-gradient-to-br from-primary-50 to-white rounded-2xl border border-primary-100 overflow-hidden">
+            <button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-primary-50 transition-colors">
+              <h3 class="text-xl font-bold text-gray-900 pr-8">Do you take vendor kickbacks or commissions?</h3>
+              <svg class="faq-icon w-6 h-6 text-primary-600 flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-answer hidden p-6 pt-0">
+              <p class="text-gray-700 leading-relaxed">
+                <strong>Absolutely not.</strong> We're 100% aligned with your success, not vendor sales quotas. 
+                Our recommendations are based purely on what's best for your restaurant.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Technical Questions -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">Technical Questions</h2>
+        
+        <div class="space-y-4">
+          <div class="faq-item bg-gradient-to-br from-primary-50 to-white rounded-2xl border border-primary-100 overflow-hidden">
+            <button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-primary-50 transition-colors">
+              <h3 class="text-xl font-bold text-gray-900 pr-8">Will my staff need extensive training?</h3>
+              <svg class="faq-icon w-6 h-6 text-primary-600 flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-answer hidden p-6 pt-0">
+              <p class="text-gray-700 leading-relaxed">
+                We provide hands-on training for all team members during implementation. Most staff are comfortable with 
+                new systems within 2-3 days. We also create custom training materials and offer ongoing support.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item bg-gradient-to-br from-primary-50 to-white rounded-2xl border border-primary-100 overflow-hidden">
+            <button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-primary-50 transition-colors">
+              <h3 class="text-xl font-bold text-gray-900 pr-8">What happens if something breaks after you set it up?</h3>
+              <svg class="faq-icon w-6 h-6 text-primary-600 flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-answer hidden p-6 pt-0">
+              <p class="text-gray-700 leading-relaxed">
+                All projects include a 30-day warranty period. For ongoing clients on retainer, we provide priority support 
+                and system monitoring. We're available via phone, email, or text for urgent issues.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item bg-gradient-to-br from-primary-50 to-white rounded-2xl border border-primary-100 overflow-hidden">
+            <button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-primary-50 transition-colors">
+              <h3 class="text-xl font-bold text-gray-900 pr-8">Can you help with online ordering and delivery?</h3>
+              <svg class="faq-icon w-6 h-6 text-primary-600 flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-answer hidden p-6 pt-0">
+              <p class="text-gray-700 leading-relaxed">
+                Yes! We specialize in first-party online ordering (you own the customer data, no commissions) and can 
+                integrate with delivery platforms like DoorDash, Uber Eats, and Grubhub through your POS to streamline 
+                operations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Getting Started -->
+      <div>
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">Getting Started</h2>
+        
+        <div class="space-y-4">
+          <div class="faq-item bg-gradient-to-br from-primary-50 to-white rounded-2xl border border-primary-100 overflow-hidden">
+            <button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-primary-50 transition-colors">
+              <h3 class="text-xl font-bold text-gray-900 pr-8">How do I get started?</h3>
+              <svg class="faq-icon w-6 h-6 text-primary-600 flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-answer hidden p-6 pt-0">
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Simple! Schedule a free 30-minute discovery call. We'll discuss your current challenges, review your tech 
+                stack, and identify quick wins. No pressure, no sales pitch—just honest advice.
+              </p>
+              <a href="/schedule" class="inline-block bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105">
+                Schedule Free Consultation
+              </a>
+            </div>
+          </div>
+
+          <div class="faq-item bg-gradient-to-br from-primary-50 to-white rounded-2xl border border-primary-100 overflow-hidden">
+            <button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-primary-50 transition-colors">
+              <h3 class="text-xl font-bold text-gray-900 pr-8">What size restaurants do you work with?</h3>
+              <svg class="faq-icon w-6 h-6 text-primary-600 flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-answer hidden p-6 pt-0">
+              <p class="text-gray-700 leading-relaxed">
+                We work with independent restaurants and small chains (1-20 locations) doing $500K-$10M in annual revenue. 
+                Our sweet spot is restaurants with 1-5 locations looking to scale or optimize operations.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item bg-gradient-to-br from-primary-50 to-white rounded-2xl border border-primary-100 overflow-hidden">
+            <button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-primary-50 transition-colors">
+              <h3 class="text-xl font-bold text-gray-900 pr-8">I have a different question not listed here</h3>
+              <svg class="faq-icon w-6 h-6 text-primary-600 flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-answer hidden p-6 pt-0">
+              <p class="text-gray-700 leading-relaxed">
+                No problem! Email us at <a href="mailto:hello@megabite.consulting" class="text-primary-600 hover:text-primary-700 font-semibold">hello@megabite.consulting</a> or 
+                schedule a call. We're happy to answer any questions you have.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="mt-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl p-12 text-center text-white">
+        <h2 class="text-3xl font-bold mb-4">Ready to Transform Your Restaurant's Technology?</h2>
+        <p class="text-xl mb-8 opacity-90">
+          Let's discuss how we can help you save money and scale your operations
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/schedule" class="bg-white text-primary-600 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300 hover:scale-105">
+            Schedule Free Consultation
+          </a>
+          <a href="/roi-calculator" class="bg-primary-700 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary-800 transition-all duration-300">
+            Calculate Your ROI
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // FAQ Accordion functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      const answer = item.querySelector('.faq-answer');
+      const icon = item.querySelector('.faq-icon');
+      
+      question?.addEventListener('click', () => {
+        // Toggle current item
+        const isOpen = !answer?.classList.contains('hidden');
+        
+        if (isOpen) {
+          answer?.classList.add('hidden');
+          icon?.classList.remove('rotate-180');
+        } else {
+          answer?.classList.remove('hidden');
+          icon?.classList.add('rotate-180');
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .faq-answer {
+    transition: all 0.3s ease-in-out;
+  }
+</style>
