@@ -1,0 +1,142 @@
+[debug] [2025-11-06T18:59:42.219Z] ----------------------------------------------------------------------
+[debug] [2025-11-06T18:59:42.221Z] Command:       /opt/homebrew/Cellar/node/24.5.0/bin/node /opt/homebrew/bin/firebase deploy --only hosting
+[debug] [2025-11-06T18:59:42.221Z] CLI Version:   14.23.0
+[debug] [2025-11-06T18:59:42.221Z] Platform:      darwin
+[debug] [2025-11-06T18:59:42.221Z] Node Version:  v24.5.0
+[debug] [2025-11-06T18:59:42.221Z] Time:          Thu Nov 06 2025 11:59:42 GMT-0700 (Mountain Standard Time)
+[debug] [2025-11-06T18:59:42.221Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-11-06T18:59:42.320Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-11-06T18:59:42.320Z] > authorizing via signed-in user (lukepitstick06@gmail.com)
+[debug] [2025-11-06T18:59:42.320Z] [iam] checking project megabite-272 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-11-06T18:59:42.321Z] Checked if tokens are valid: true, expires at: 1762458419372
+[debug] [2025-11-06T18:59:42.321Z] Checked if tokens are valid: true, expires at: 1762458419372
+[debug] [2025-11-06T18:59:42.321Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/megabite-272:testIamPermissions [none]
+[debug] [2025-11-06T18:59:42.321Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/megabite-272:testIamPermissions x-goog-quota-user=projects/megabite-272
+[debug] [2025-11-06T18:59:42.322Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/megabite-272:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-11-06T18:59:42.437Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/megabite-272:testIamPermissions 200
+[debug] [2025-11-06T18:59:42.437Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/megabite-272:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-11-06T18:59:42.438Z] Checked if tokens are valid: true, expires at: 1762458419372
+[debug] [2025-11-06T18:59:42.438Z] Checked if tokens are valid: true, expires at: 1762458419372
+[debug] [2025-11-06T18:59:42.438Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/megabite-272 [none]
+[debug] [2025-11-06T18:59:42.846Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/megabite-272 200
+[debug] [2025-11-06T18:59:42.846Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/megabite-272 {"projectId":"megabite-272","projectNumber":"421097465003","displayName":"Megabite","name":"projects/megabite-272","resources":{"hostingSite":"megabite-272"},"state":"ACTIVE","etag":"1_9ef1b0ac-dc28-4ce2-82c5-1dc1b3aabeb1"}
+[info] 
+[info] === Deploying to 'megabite-272'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2025-11-06T18:59:42.849Z] Checked if tokens are valid: true, expires at: 1762458419372
+[debug] [2025-11-06T18:59:42.849Z] Checked if tokens are valid: true, expires at: 1762458419372
+[debug] [2025-11-06T18:59:42.849Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/megabite-272/versions [none]
+[debug] [2025-11-06T18:59:42.849Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/megabite-272/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2025-11-06T18:59:43.461Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/megabite-272/versions 200
+[debug] [2025-11-06T18:59:43.462Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/megabite-272/versions {"name":"projects/421097465003/sites/megabite-272/versions/d8bd6c8e2fea5776","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[megabite-272]: beginning deploy... 
+[info] i  hosting[megabite-272]: found 33 files in dist 
+[debug] [2025-11-06T18:59:43.472Z] [hosting] uploading with 200 concurrency
+[debug] [2025-11-06T18:59:43.484Z] Checked if tokens are valid: true, expires at: 1762458419372
+[debug] [2025-11-06T18:59:43.485Z] Checked if tokens are valid: true, expires at: 1762458419372
+[debug] [2025-11-06T18:59:43.485Z] [hosting] hash cache [ZGlzdA] stored for 33 files
+[debug] [2025-11-06T18:59:43.485Z] [hosting][hash queue][FINAL] {"max":9,"min":8,"avg":8.454545454545457,"active":0,"complete":33,"success":33,"errored":0,"retried":0,"total":33,"elapsed":11}
+[debug] [2025-11-06T18:59:43.485Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/421097465003/sites/megabite-272/versions/d8bd6c8e2fea5776:populateFiles [none]
+[debug] [2025-11-06T18:59:43.486Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/421097465003/sites/megabite-272/versions/d8bd6c8e2fea5776:populateFiles {"files":{"/sitemap.xml":"4b1520066ed407c43c08fcc965ef38c63dd00a5a99c10b7b367ea0a1d66a3191","/robots.txt":"faa8aedf842df0f5a9cd937cb8cb35170a6beca1696562fba41b336c7cae8e83","/og-image.jpg":"cbd4043e13c8fe47a48bf79d3ac0855a097b4e98e5af84e510fb97382cbf5f43","/schedule.html":"6a72b55c4c915a304bb8acb4b47e4cd6d69d2b38a185cd76d3595278c9f8e462","/privacy.html":"d0c036a148414e5c382ee62461662d3498df12daa99c78a1b6918e9881694f8e","/logo.png":"89366b0ba7a3b598c29da864f4c89174bfbf54a9bca260b53e29e1e7e47785c3","/logo-icon.png":"5eed193b372b6cf55eb1f1a0b7ec909877b1ff7bac1e6cc9c4a5e19a55894262","/services.html":"b442d296ee0946ea475222ee0fbbf7f9d3fc4157a6c26210eb5d99777af4c38c","/logo-alt.png":"18b9f45861149ba30b0244536aea364eb179a9715fe1279bd92270cf0effe98f","/roi-calculator.html":"02ead23636d091326797c7fd7c468be42287d373be405c6db5e02c287b4f60f4","/labor-calculator.html":"989850ab4c8a8e23af1708f4c4e85738915612cf5b160dea1e8dafddd4425107","/pricing.html":"c7b3071d744aa051c2fb313bb755ec4a9636281582d8dae5077d360ed423fb97","/favicon.png":"5eed193b372b6cf55eb1f1a0b7ec909877b1ff7bac1e6cc9c4a5e19a55894262","/index.html":"0d483c7a440dae0a7cfb8382620327c63807ed3761e1070bcd6eb685fb13b80c","/favicon.ico":"d1db82caebac447b2cc12e0f34a67416bb93a949915486e695ca46e198d02b51","/food-waste-calculator.html":"91fe7f25fc80e364f0a2fbabeb3453e13a6ae1389c36b9250db6d2dd7c173c52","/blog.html":"134f85a6a5d9b22e982e76bec08a919e7914e4435d4a35a0b95e6a99a66b06cf","/how-it-works.html":"ebccd4adbf9854dab6af9be08a15832cc6c3c3dc21374f5b7959fefd37ffe032","/delivery-calculator.html":"cbfc491cfec9dcce21514a9e8b544fc494c61ed23ef277668af706fbec32bbc9","/faq.html":"926de8d00f0247fea4a5ece9fa8ab6f67bbb0c2e8321f1c4aa9c59c217b0b764","/404.html":"498ae389a760dd76a8469c50d0654984d82178a21377ad9709e683692d497167","/about.html":"406a4c97430ff42bd1dfa4385a778c6c3952c298c364d5e1c449a9964adbd81b","/blog/why-restaurants-need-integrated-systems.html":"2ebd9b7631703e21ddac160be9a328396e4c89dda1db807f5b886c7371fa189e","/blog/unified-tech-stack-restaurant.html":"2ff00a90c1c391f426ea5b7f62504b9903edcd3a42f9dc608db11090bf1daf1e","/_astro/hoisted.sJ4hTY9_.js":"e996305e0b4fa6dc384915dd3606f7d9c7aa45b2781b64a0766e3f455e27512f","/blog/fractional-cto-vs-fulltime.html":"3ba05fcf112e1e7e284ba2bdd067404fdea123493d1a93d2c2f1711bc65570f3","/blog/restaurant-profitability-crisis-2025-denver.html":"f83e4343eaae01277c0e5490bbc6fa858fd5d8c1739825ef70fc45e2c966a15f","/blog/toast-vs-square-vs-lightspeed-2025.html":"6801ebcfa91f443561df2be9a6a0d1a504137e95414d8b76ea6a71ddfb83ff2d","/SVG to PNG/Megabite 01.png":"5eed193b372b6cf55eb1f1a0b7ec909877b1ff7bac1e6cc9c4a5e19a55894262","/SVG to PNG/Megabite.png":"89366b0ba7a3b598c29da864f4c89174bfbf54a9bca260b53e29e1e7e47785c3","/SVG to PNG/Megabite 02.png":"18b9f45861149ba30b0244536aea364eb179a9715fe1279bd92270cf0effe98f","/_astro/about.BHd9Rvhg.css":"fd7043f176b3302bc7568e6bf2ea4c57a94b36715159488d109f2092aaf5f400","/blog/choosing-the-right-pos-system.html":"4504cb73250a2aadcab34554d23fc3b806cac51934226a66b40bbef13451851f"}}
+[debug] [2025-11-06T18:59:43.654Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/421097465003/sites/megabite-272/versions/d8bd6c8e2fea5776:populateFiles 200
+[debug] [2025-11-06T18:59:43.655Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/421097465003/sites/megabite-272/versions/d8bd6c8e2fea5776:populateFiles {"uploadRequiredHashes":["4b1520066ed407c43c08fcc965ef38c63dd00a5a99c10b7b367ea0a1d66a3191"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/megabite-272/versions/d8bd6c8e2fea5776/files"}
+[debug] [2025-11-06T18:59:43.655Z] Checked if tokens are valid: true, expires at: 1762458419372
+[debug] [2025-11-06T18:59:43.655Z] Checked if tokens are valid: true, expires at: 1762458419372
+[debug] [2025-11-06T18:59:43.655Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/megabite-272/versions/d8bd6c8e2fea5776/files/4b1520066ed407c43c08fcc965ef38c63dd00a5a99c10b7b367ea0a1d66a3191 [none]
+[debug] [2025-11-06T18:59:43.655Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/megabite-272/versions/d8bd6c8e2fea5776/files/4b1520066ed407c43c08fcc965ef38c63dd00a5a99c10b7b367ea0a1d66a3191 [stream]
+[debug] [2025-11-06T18:59:43.657Z] [hosting][populate queue][FINAL] {"max":171,"min":171,"avg":171,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":173}
+[debug] [2025-11-06T18:59:43.657Z] [hosting] uploads queued: 1
+[debug] [2025-11-06T18:59:44.178Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/megabite-272/versions/d8bd6c8e2fea5776/files/4b1520066ed407c43c08fcc965ef38c63dd00a5a99c10b7b367ea0a1d66a3191 200
+[debug] [2025-11-06T18:59:44.178Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/megabite-272/versions/d8bd6c8e2fea5776/files/4b1520066ed407c43c08fcc965ef38c63dd00a5a99c10b7b367ea0a1d66a3191 [stream]
+[debug] [2025-11-06T18:59:44.178Z] [hosting][upload queue][FINAL] {"max":523,"min":523,"avg":523,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":523}
+[info] ✔  hosting[megabite-272]: file upload complete 
+[debug] [2025-11-06T18:59:44.179Z] [hosting] deploy completed after 716ms
+[debug] [2025-11-06T18:59:44.179Z] [
+  {
+    "config": {
+      "public": "dist",
+      "ignore": [
+        "firebase.json",
+        "**/.git/**",
+        "**/node_modules/**"
+      ],
+      "redirects": [
+        {
+          "source": "/team",
+          "destination": "/404",
+          "type": 301
+        },
+        {
+          "source": "/team/",
+          "destination": "/404",
+          "type": 301
+        }
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "headers": [
+        {
+          "source": "**/*.@(js|css|svg|png|jpg|jpeg|webp|ico|woff|woff2)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public,max-age=31536000,immutable"
+            }
+          ]
+        },
+        {
+          "source": "**/*.@(html|json|xml)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public,max-age=3600,must-revalidate"
+            }
+          ]
+        },
+        {
+          "source": "**",
+          "headers": [
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "1; mode=block"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "strict-origin-when-cross-origin"
+            }
+          ]
+        }
+      ],
+      "site": "megabite-272"
+    },
+    "version": "projects/421097465003/sites/megabite-272/versions/d8bd6c8e2fea5776"
+  }
+]
+[info] i  hosting[megabite-272]: finalizing version... 
+[debug] [2025-11-06T18:59:44.180Z] Checked if tokens are valid: true, expires at: 1762458419372
+[debug] [2025-11-06T18:59:44.180Z] Checked if tokens are valid: true, expires at: 1762458419372
+[debug] [2025-11-06T18:59:44.180Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/megabite-272/versions/d8bd6c8e2fea5776 updateMask=status%2Cconfig
+[debug] [2025-11-06T18:59:44.180Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/megabite-272/versions/d8bd6c8e2fea5776 {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}],"redirects":[{"glob":"/team","location":"/404","statusCode":301},{"glob":"/team/","location":"/404","statusCode":301}],"headers":[{"glob":"**/*.@(js|css|svg|png|jpg|jpeg|webp|ico|woff|woff2)","headers":{"Cache-Control":"public,max-age=31536000,immutable"}},{"glob":"**/*.@(html|json|xml)","headers":{"Cache-Control":"public,max-age=3600,must-revalidate"}},{"glob":"**","headers":{"X-Content-Type-Options":"nosniff","X-Frame-Options":"DENY","X-XSS-Protection":"1; mode=block","Referrer-Policy":"strict-origin-when-cross-origin"}}]}}
+[debug] [2025-11-06T18:59:44.292Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/megabite-272/versions/d8bd6c8e2fea5776 200
+[debug] [2025-11-06T18:59:44.292Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/megabite-272/versions/d8bd6c8e2fea5776 {"name":"projects/421097465003/sites/megabite-272/versions/d8bd6c8e2fea5776","status":"FINALIZED","config":{"headers":[{"headers":{"Cache-Control":"public,max-age=31536000,immutable"},"glob":"**/*.@(js|css|svg|png|jpg|jpeg|webp|ico|woff|woff2)"},{"headers":{"Cache-Control":"public,max-age=3600,must-revalidate"},"glob":"**/*.@(html|json|xml)"},{"headers":{"X-Frame-Options":"DENY","X-XSS-Protection":"1; mode=block","Referrer-Policy":"strict-origin-when-cross-origin","X-Content-Type-Options":"nosniff"},"glob":"**"}],"redirects":[{"statusCode":301,"location":"/404","glob":"/team"},{"statusCode":301,"location":"/404","glob":"/team/"}],"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2025-11-06T18:59:43.204532Z","createUser":{"email":"lukepitstick06@gmail.com"},"finalizeTime":"2025-11-06T18:59:44.332331Z","finalizeUser":{"email":"lukepitstick06@gmail.com"}}
+[debug] [2025-11-06T18:59:44.292Z] [hosting] finalized version for megabite-272:[object Object]
+[info] ✔  hosting[megabite-272]: version finalized 
+[info] i  hosting[megabite-272]: releasing new version... 
+[debug] [2025-11-06T18:59:44.292Z] Checked if tokens are valid: true, expires at: 1762458419372
+[debug] [2025-11-06T18:59:44.292Z] Checked if tokens are valid: true, expires at: 1762458419372
+[debug] [2025-11-06T18:59:44.292Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/megabite-272/channels/live/releases versionName=projects%2F421097465003%2Fsites%2Fmegabite-272%2Fversions%2Fd8bd6c8e2fea5776
+[debug] [2025-11-06T18:59:44.292Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/megabite-272/channels/live/releases {}

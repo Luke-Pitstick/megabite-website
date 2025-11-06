@@ -6,6 +6,18 @@
       "**/.git/**",
       "**/node_modules/**"
     ],
+    "redirects": [
+      {
+        "source": "/team",
+        "destination": "/404",
+        "type": 301
+      },
+      {
+        "source": "/team/",
+        "destination": "/404",
+        "type": 301
+      }
+    ],
     "rewrites": [
       {
         "source": "**",

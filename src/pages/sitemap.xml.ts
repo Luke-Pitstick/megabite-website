@@ -45,6 +45,24 @@ export const GET: APIRoute = async ({ site }) => {
       lastmod: new Date()
     },
     {
+      url: '/labor-calculator',
+      changefreq: 'monthly',
+      priority: 0.8,
+      lastmod: new Date()
+    },
+    {
+      url: '/food-waste-calculator',
+      changefreq: 'monthly',
+      priority: 0.8,
+      lastmod: new Date()
+    },
+    {
+      url: '/delivery-calculator',
+      changefreq: 'monthly',
+      priority: 0.8,
+      lastmod: new Date()
+    },
+    {
       url: '/about',
       changefreq: 'monthly',
       priority: 0.7,
@@ -83,10 +101,13 @@ export const GET: APIRoute = async ({ site }) => {
     });
   }
 
+  // Remove trailing slash from site URL to prevent double slashes
+  const baseUrl = site?.toString().replace(/\/$/, '') || 'https://megabiteco.com';
+  
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${pages.map(page => `  <url>
-    <loc>${site}${page.url}</loc>
+    <loc>${baseUrl}${page.url}</loc>
     <lastmod>${page.lastmod.toISOString()}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>

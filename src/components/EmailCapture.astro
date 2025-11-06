@@ -51,7 +51,9 @@ const { title = "Stay Updated with Restaurant Tech Insights", description = "Get
     }
     
     // Here you would typically send to your email service (Mailchimp, etc.)
+    // TODO: Send email to your service: await sendToMailchimp(email);
     // For now, we'll just show a success message
+    console.log('Newsletter signup:', email);
     setTimeout(() => {
       if (successMessage) {
         successMessage.classList.remove('hidden');

@@ -20,7 +20,9 @@ const {
 
 // Generate full URL for Open Graph
 const siteUrl = "https://megabiteco.com";
-const fullUrl = siteUrl + canonical;
+// Remove trailing slash for consistency (except for homepage)
+const cleanPath = canonical === '/' ? canonical : canonical.replace(/\/$/, '');
+const fullUrl = siteUrl + cleanPath;
 const fullImageUrl = siteUrl + image;
 ---
 
@@ -28,7 +30,7 @@ const fullImageUrl = siteUrl + image;
 <html lang="en">
   <head>
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2JEBR1S2WH"></script>
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-2JEBR1S2WH"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -99,7 +101,7 @@ const fullImageUrl = siteUrl + image;
     <title>{title} | MegaBite - Denver & Boulder Restaurant Technology</title>
     
     <!-- Structured Data -->
-    <script type="application/ld+json">
+    <script is:inline type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
@@ -422,43 +424,17 @@ const fullImageUrl = siteUrl + image;
   (function() {
     const popup = document.getElementById('exit-popup');
     const closeButton = document.getElementById('close-popup');
-    const form = document.getElementById('exit-popup-form');
-    let hasShownPopup = false;
-
-    // Show popup on exit intent (mouse leaving viewport from top)
-    function handleMouseOut(e) {
-      if (!hasShownPopup && e.clientY <= 0 && e.relatedTarget == null) {
-        popup?.classList.remove('hidden');
-        hasShownPopup = true;
-        // Store in session so it doesn't show again this session
-        sessionStorage.setItem('exitPopupShown', 'true');
-      }
-    }
 
     // Close popup
     function closePopup() {
       popup?.classList.add('hidden');
     }
 
-    // Handle form submission (commented out since form is hidden)
-    // function handleSubmit(e) {
-    //   e.preventDefault();
-    //   // Here you would send to your email service
-    //   alert('Thanks! Check your email for the guide.');
-    //   closePopup();
-    // }
-
     // Exit intent popup disabled per user request
-    // Check if popup was already shown this session
-    // if (!sessionStorage.getItem('exitPopupShown')) {
-    //   document.addEventListener('mouseout', handleMouseOut);
-    // }
-
     closeButton?.addEventListener('click', closePopup);
     popup?.addEventListener('click', function(e) {
       if (e.target === popup) closePopup();
     });
-    // form?.addEventListener('submit', handleSubmit); // Commented out since form is hidden
   })();
 
   // Mobile menu toggle
